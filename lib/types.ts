@@ -29,6 +29,19 @@ export type CaseStudyResult = {
   change: string;
 };
 
+export type ChannelScreenshot = {
+  src: string;
+  caption: string;
+};
+
+export type ChannelExecution = {
+  channel: Channel;
+  tier: string;
+  highlights: string[];
+  metric: { label: string; value: string };
+  screenshots: ChannelScreenshot[];
+};
+
 export type CaseStudy = {
   slug: string;
   title: string;
@@ -40,6 +53,7 @@ export type CaseStudy = {
   challenge: string;
   strategy: string;
   implementation: string[];
+  channelExecution?: ChannelExecution[];
   results: CaseStudyResult[];
   tools: string[];
   featured: boolean;

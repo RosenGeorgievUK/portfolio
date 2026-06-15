@@ -34,7 +34,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
   if (!study) notFound();
 
   const related = getAllCaseStudies()
-    .filter((s) => s.slug !== study.slug)
+    .filter((s) => s.slug !== study.slug && s.featured)
     .slice(0, 3);
 
   return (
@@ -74,23 +74,8 @@ export default async function CaseStudyPage({ params }: PageProps) {
 
       <p className="mt-10 text-lg leading-relaxed text-muted">{study.summary}</p>
 
-      {study.coverImage ? (
-        <div className="mt-12 overflow-hidden border border-border">
-          <div className="relative aspect-[16/9] w-full">
-            <Image
-              src={study.coverImage}
-              alt={`${study.title} — project screenshot`}
-              fill
-              className="object-cover object-top"
-              sizes="(max-width: 768px) 100vw, 768px"
-              priority
-            />
-          </div>
-        </div>
-      ) : null}
-
       {study.projectLinks && study.projectLinks.length > 0 ? (
-        <div className="mt-6 flex flex-wrap gap-6">
+        <div className="mt-8 flex flex-wrap gap-6">
           {study.projectLinks.map((link) => (
             <a
               key={link.url}
@@ -109,14 +94,31 @@ export default async function CaseStudyPage({ params }: PageProps) {
           href={study.projectUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-6 inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-muted hover:text-foreground"
+          className="mt-8 inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-muted hover:text-foreground"
         >
           View live project
           <ArrowUpRight className="h-3.5 w-3.5" />
         </a>
       ) : null}
 
-      {study.galleryImages && study.galleryImages.length > 1 ? (
+      {!study.channelExecution?.length && study.coverImage ? (
+        <div className="mt-12 overflow-hidden border border-border">
+          <div className="relative aspect-[16/9] w-full">
+            <Image
+              src={study.coverImage}
+              alt={`${study.title} — project screenshot`}
+              fill
+              className="object-cover object-top"
+              sizes="(max-width: 768px) 100vw, 768px"
+              priority
+            />
+          </div>
+        </div>
+      ) : null}
+
+      {!study.channelExecution?.length &&
+      study.galleryImages &&
+      study.galleryImages.length > 1 ? (
         <div className="mt-8 grid gap-4 sm:grid-cols-2">
           {study.galleryImages.slice(1).map((image) => (
             <div key={image} className="overflow-hidden border border-border">
@@ -173,6 +175,64 @@ export default async function CaseStudyPage({ params }: PageProps) {
           ))}
         </ul>
       </section>
+
+      {study.channelExecution && study.channelExecution.length > 0 ? (
+        <section className="mt-16">
+          <h2 className="font-mono text-xs uppercase tracking-widest text-muted">
+            Channel evidence
+          </h2>
+          <div className="mt-8 space-y-16">
+            {study.channelExecution.map((block) => (
+              <div key={block.channel}>
+                <div className="flex flex-wrap items-start justify-between gap-4 border-b border-border pb-6">
+                  <div className="flex flex-wrap items-center gap-3">
+                    <ChannelBadge channel={block.channel} size="sm" />
+                    <span className="font-mono text-xs uppercase tracking-wider text-muted">
+                      {block.tier}
+                    </span>
+                  </div>
+                  <div className="text-right">
+                    <p className="font-heading text-lg font-semibold text-foreground">
+                      {block.metric.value}
+                    </p>
+                    <p className="mt-1 font-mono text-xs text-muted">
+                      {block.metric.label}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="mt-6 space-y-6">
+                  {block.screenshots.map((shot, index) => (
+                    <figure key={shot.src} className="overflow-hidden border border-border">
+                      <div className="relative aspect-[16/9] w-full">
+                        <Image
+                          src={shot.src}
+                          alt={shot.caption}
+                          fill
+                          className="object-cover object-top"
+                          sizes="(max-width: 768px) 100vw, 768px"
+                          priority={index === 0}
+                        />
+                      </div>
+                      <figcaption className="border-t border-border px-6 py-4 font-mono text-xs text-muted">
+                        {shot.caption}
+                      </figcaption>
+                    </figure>
+                  ))}
+                </div>
+
+                <ul className="mt-6 space-y-3">
+                  {block.highlights.map((item) => (
+                    <li key={item} className="text-sm leading-relaxed text-muted">
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </section>
+      ) : null}
 
       <section className="mt-16">
         <h2 className="font-mono text-xs uppercase tracking-widest text-muted">

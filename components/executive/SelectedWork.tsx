@@ -17,7 +17,7 @@ export function SelectedWork() {
               Selected work
             </p>
             <h2 className="mt-3 font-heading text-3xl font-semibold tracking-tight text-foreground">
-              Flagship projects
+              Verified programmes
             </h2>
           </div>
           <Link

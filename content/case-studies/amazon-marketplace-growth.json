@@ -48,7 +48,7 @@
     "Google Analytics 4",
     "Looker Studio"
   ],
-  "featured": true,
+  "featured": false,
   "coverImage": "/images/case-studies/amazon.jpg",
   "headlineMetrics": [
     { "label": "Revenue Growth", "value": "+47%" },

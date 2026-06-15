@@ -50,7 +50,7 @@
     "Hotjar",
     "Klaviyo"
   ],
-  "featured": true,
+  "featured": false,
   "coverImage": "/images/case-studies/woocommerce.jpg",
   "headlineMetrics": [
     { "label": "CVR Lift", "value": "+67%" },

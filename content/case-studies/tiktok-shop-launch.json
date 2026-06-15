@@ -48,7 +48,7 @@
     "Google Analytics 4",
     "Google Tag Manager"
   ],
-  "featured": true,
+  "featured": false,
   "coverImage": "/images/case-studies/tiktok.jpg",
   "headlineMetrics": [
     { "label": "TikTok CVR", "value": "2.1%" },

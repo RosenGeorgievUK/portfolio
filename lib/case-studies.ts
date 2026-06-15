@@ -24,8 +24,15 @@ export function getAllCaseStudies(): CaseStudy[] {
   return caseStudies;
 }
 
+const FEATURED_ORDER = [
+  "rebx-shopify-refurbished",
+  "gymstack-shopify-marketplace",
+] as const;
+
 export function getFeaturedCaseStudies(): CaseStudy[] {
-  return caseStudies.filter((study) => study.featured);
+  const featured = caseStudies.filter((study) => study.featured);
+  return FEATURED_ORDER.map((slug) => featured.find((study) => study.slug === slug))
+    .filter((study): study is CaseStudy => study !== undefined);
 }
 
 export function getCaseStudyBySlug(slug: string): CaseStudy | undefined {
