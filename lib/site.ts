@@ -40,7 +40,7 @@ export const siteConfig = {
     { label: "eBay items sold", value: "190K+", detail: "REBX · rebxshop" },
     { label: "Seller feedback", value: "99.6%", detail: "REBX eBay store" },
     { label: "Brand catalogue", value: "300+", detail: "Gymstack marketplace" },
-    { label: "Channels operated", value: "3", detail: "REBX · Shopify, eBay, Temu" },
+    { label: "Channels operated", value: "4", detail: "REBX · Shopify, eBay, Back Market, Temu" },
     { label: "Temu store rating", value: "4.5★", detail: "82 SKUs · local warehouse" },
   ] satisfies ImpactStat[],
   experience: [
@@ -52,7 +52,7 @@ export const siteConfig = {
       highlights: [
         "Built multi-channel refurbished programme across DTC and marketplaces",
         "Scaled eBay store to 190K+ items sold at 99.6% positive feedback",
-        "Launched Temu mall with margin-screened catalogue and 4.5★ rating",
+        "Maintained 4.4★ Back Market seller rating across 88-product catalogue",
       ],
     },
     {

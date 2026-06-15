@@ -7,6 +7,7 @@ export const CHANNELS = [
   "temu",
   "shopify",
   "woocommerce",
+  "backmarket",
 ] as const;
 
 export type Channel = (typeof CHANNELS)[number];
@@ -18,6 +19,7 @@ export const PRIMARY_CHANNELS = [
   "shopify",
   "woocommerce",
   "temu",
+  "backmarket",
 ] as const satisfies readonly Channel[];
 
 export type PrimaryChannel = (typeof PRIMARY_CHANNELS)[number];

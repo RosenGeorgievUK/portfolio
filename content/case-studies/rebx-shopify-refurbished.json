@@ -1,17 +1,17 @@
 {
   "slug": "rebx-shopify-refurbished",
   "title": "REBX: Multi-Channel Refurbished Commerce",
-  "channels": ["shopify", "ebay", "temu"],
+  "channels": ["shopify", "ebay", "backmarket", "temu"],
   "industry": "Consumer Electronics — UK Refurbished",
   "role": "E-commerce Manager",
   "timeline": "Ongoing",
-  "summary": "Owned RebX end-to-end across DTC and marketplaces — unified grading, trade-in inventory, and channel-tier merchandising on Shopify, eBay (190K+ sold), and Temu (82 SKUs, 4.5★).",
-  "challenge": "Refurbished tech requires trust at every touchpoint. RebX needed one operating model — certified quality, clear grades, warranty, returns — deployed across an owned Shopify channel and two marketplace reach layers, without fragmenting brand, inventory, or margin discipline.",
-  "strategy": "Ran a three-tier channel architecture: Shopify as the DTC anchor (grading, trade-in, BNPL), eBay as the volume engine (custom store, 9K+ listings, 99.6% feedback), and Temu as a margin-screened discovery layer (82 SKUs, local warehouse). Shared inventory logic and RebX Certified positioning tied the programme together.",
+  "summary": "Owned RebX end-to-end across DTC and marketplaces — Shopify, eBay (190K+ sold), Back Market (88 products, 4.4★), and Temu (82 SKUs) — through unified grading, trade-in inventory, and channel-tier merchandising.",
+  "challenge": "Refurbished tech requires trust at every touchpoint. RebX needed one operating model — certified quality, clear grades, warranty, returns — deployed across an owned Shopify channel and three marketplace reach layers, without fragmenting brand, inventory, or margin discipline.",
+  "strategy": "Ran a four-tier channel architecture: Shopify as the DTC anchor, eBay as the volume engine, Back Market as the refurbished-native marketplace (4 years trusted, category-rated reviews), and Temu as a margin-screened discovery layer. Shared inventory logic and RebX Certified positioning tied the programme together.",
   "implementation": [
     "Built RebX Certified Refurbished standard — 90-point quality check, four cosmetic grades, 12-month warranty — applied across all channels",
-    "Deployed trade-in valuation flow as the inventory flywheel feeding Shopify, eBay, and Temu catalogues",
-    "Established channel-tier pricing and listing rules to protect margin on Temu while maximising reach on eBay",
+    "Deployed trade-in valuation flow as the inventory flywheel feeding Shopify, eBay, Back Market, and Temu catalogues",
+    "Established channel-tier pricing and listing rules to protect margin on discovery channels while maximising reach on eBay and Back Market",
     "Unified PDP trust architecture: grading guides, warranty terms, and condition labels adapted per platform"
   ],
   "channelExecution": [
@@ -60,6 +60,26 @@
       ]
     },
     {
+      "channel": "backmarket",
+      "tier": "Refurb-native marketplace · Rebx seller",
+      "highlights": [
+        "Approved seller — 4.4/5 stars, trusted on Back Market for 4 years",
+        "88-product catalogue across smartphones, watches, audio, and consoles",
+        "Category-rated reviews — Battery 4.6, Shipping 4.6, Lens & Camera 4.7"
+      ],
+      "metric": { "label": "Seller rating", "value": "4.4★" },
+      "screenshots": [
+        {
+          "src": "/images/case-studies/rebx-backmarket-reviews.png",
+          "caption": "Back Market seller profile — 4.4/5 rating, 4 years trusted"
+        },
+        {
+          "src": "/images/case-studies/rebx-backmarket-items.png",
+          "caption": "88-product catalogue — iPhone, Apple Watch, Switch Lite, Galaxy Buds"
+        }
+      ]
+    },
+    {
       "channel": "temu",
       "tier": "Discovery expansion · RebX mall",
       "highlights": [
@@ -84,7 +104,7 @@
     {
       "label": "Channels live",
       "before": "1",
-      "after": "3",
+      "after": "4",
       "change": "Unified ops"
     },
     {
@@ -94,22 +114,23 @@
       "change": "Volume"
     },
     {
-      "label": "eBay feedback",
+      "label": "Back Market rating",
       "before": "—",
-      "after": "99.6%",
-      "change": "Positive"
+      "after": "4.4★",
+      "change": "4 years"
     },
     {
       "label": "Cross-channel SKUs",
       "before": "—",
-      "after": "9K+ / 82",
-      "change": "eBay / Temu"
+      "after": "9K+ / 88 / 82",
+      "change": "eBay / BM / Temu"
     }
   ],
   "tools": [
     "Shopify",
     "eBay Seller Hub",
     "eBay Promoted Listings",
+    "Back Market Seller Portal",
     "Temu Seller Center",
     "Google Analytics 4",
     "Google Tag Manager",
@@ -122,11 +143,12 @@
   "projectLinks": [
     { "label": "Shopify store", "url": "https://rebx.co.uk/" },
     { "label": "eBay store", "url": "https://www.ebay.co.uk/str/rebxshop" },
+    { "label": "Back Market", "url": "https://www.backmarket.co.uk/en-gb/s/rebx/5fdfdf43-26a8-45e9-8d10-9c2452a89c3b" },
     { "label": "Temu mall", "url": "https://www.temu.com/mall.html?mall_id=670702094587285" }
   ],
   "headlineMetrics": [
-    { "label": "Channels", "value": "3" },
+    { "label": "Channels", "value": "4" },
     { "label": "eBay sold", "value": "190K+" },
-    { "label": "Feedback", "value": "99.6%" }
+    { "label": "BM rating", "value": "4.4★" }
   ]
 }

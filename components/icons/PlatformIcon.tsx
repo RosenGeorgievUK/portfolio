@@ -54,6 +54,12 @@ export function PlatformIcon({ channel, className }: PlatformIconProps) {
           <path d="M4 4h16v16H4V4zm3 3v10h2.5l2-5 2 5H16V7h-2.5l-2 5-2-5H7z" />
         </svg>
       );
+    case "backmarket":
+      return (
+        <svg viewBox="0 0 24 24" className={classes} fill="currentColor" aria-hidden="true">
+          <path d="M4 4h16v16H4V4zm2 2v12h12V6H6zm2 2h8v2H8V8zm0 4h8v2H8v-2zm0 4h5v2H8v-2z" />
+        </svg>
+      );
     default:
       return null;
   }

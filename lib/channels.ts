@@ -9,6 +9,7 @@ export const channelLabels: Record<Channel, string> = {
   temu: "Temu",
   shopify: "Shopify",
   woocommerce: "WooCommerce",
+  backmarket: "Back Market",
 };
 
 export const channelColors: Record<Channel, string> = {
@@ -20,4 +21,5 @@ export const channelColors: Record<Channel, string> = {
   temu: "#171717",
   shopify: "#262626",
   woocommerce: "#404040",
+  backmarket: "#1a1a1a",
 };
