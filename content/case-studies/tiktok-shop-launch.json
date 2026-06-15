@@ -1,0 +1,58 @@
+{
+  "slug": "tiktok-shop-launch",
+  "title": "TikTok Shop Launch: 2.1% CVR in 90 Days",
+  "channels": ["tiktok", "shopify"],
+  "industry": "Home & Lifestyle — UK DTC",
+  "role": "E-commerce Manager",
+  "timeline": "3 months",
+  "summary": "Led end-to-end TikTok Shop launch — from catalogue setup and creator partnerships to LIVE commerce events — achieving category-competitive conversion within the first quarter.",
+  "challenge": "The brand had strong organic TikTok engagement (2.4M monthly views) but zero shoppable infrastructure. Competitors were capturing social commerce demand while the DTC site converted at only 1.4% on mobile traffic referred from TikTok.",
+  "strategy": "Treated TikTok Shop as a dedicated channel with its own merchandising strategy rather than a Shopify mirror. Prioritised hero SKUs with video-friendly packaging, built creator affiliate programme, and aligned post-click experience between TikTok Shop and Shopify for retargeting.",
+  "implementation": [
+    "Onboarded 180 SKUs to TikTok Shop with platform-native titles, pricing, and fulfilment SLAs",
+    "Recruited 12 micro-creators for affiliate campaigns with tracked commission structures",
+    "Ran 6 LIVE commerce events featuring bundle offers and limited-time discounts",
+    "Built UTM-tracked landing pages on Shopify for TikTok traffic not yet ready to buy in-app",
+    "Integrated TikTok Pixel and GA4 events for full-funnel attribution reporting"
+  ],
+  "results": [
+    {
+      "label": "TikTok Shop CVR",
+      "before": "N/A",
+      "after": "2.1%",
+      "change": "vs 2.4% benchmark"
+    },
+    {
+      "label": "Social Commerce Revenue",
+      "before": "£0",
+      "after": "£42K/mo",
+      "change": "New channel"
+    },
+    {
+      "label": "Creator-Driven Orders",
+      "before": "0%",
+      "after": "34%",
+      "change": "of TikTok revenue"
+    },
+    {
+      "label": "Mobile CVR (TikTok traffic)",
+      "before": "1.4%",
+      "after": "2.3%",
+      "change": "+0.9pp"
+    }
+  ],
+  "tools": [
+    "TikTok Seller Center",
+    "TikTok Ads Manager",
+    "Shopify",
+    "Google Analytics 4",
+    "Google Tag Manager"
+  ],
+  "featured": true,
+  "coverImage": "/images/case-studies/tiktok.jpg",
+  "headlineMetrics": [
+    { "label": "TikTok CVR", "value": "2.1%" },
+    { "label": "Monthly Revenue", "value": "£42K" },
+    { "label": "Creator Orders", "value": "34%" }
+  ]
+}

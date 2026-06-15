@@ -1,0 +1,60 @@
+{
+  "slug": "woocommerce-store-optimisation",
+  "title": "WooCommerce Rebuild: 67% Conversion Lift & 92 Lighthouse Score",
+  "channels": ["woocommerce"],
+  "industry": "Home & Garden — UK DTC",
+  "role": "E-commerce Manager",
+  "timeline": "5 months",
+  "summary": "Led a full WooCommerce store rebuild on WordPress — improving performance, checkout UX, and conversion through plugin optimisation and mobile-first design.",
+  "challenge": "The legacy WooCommerce store ran on an outdated theme with 3.2s mobile load time, broken plugin conflicts, and a 1.2% conversion rate. Checkout abandonment exceeded 78%, and there was no reliable analytics tracking.",
+  "strategy": "Rebuilt on a lightweight WooCommerce theme with a curated plugin stack. Prioritised performance and mobile UX first, then layered CRO improvements on PDP and checkout before integrating GA4 tracking for ongoing optimisation.",
+  "implementation": [
+    "Migrated to a performance-optimised WooCommerce theme with lazy-loaded images",
+    "Consolidated plugin stack: Yoast SEO, WooCommerce Payments, Klaviyo, Hotjar",
+    "Redesigned PDP with trust badges, delivery estimates, and sticky add-to-cart on mobile",
+    "Simplified checkout to 2 steps with PayPal, Stripe, and Apple Pay",
+    "Deployed GA4 + GTM with validated purchase, add-to-cart, and checkout events"
+  ],
+  "results": [
+    {
+      "label": "Conversion Rate",
+      "before": "1.2%",
+      "after": "2.0%",
+      "change": "+67%"
+    },
+    {
+      "label": "Mobile Page Speed",
+      "before": "48/100",
+      "after": "92/100",
+      "change": "+44pts"
+    },
+    {
+      "label": "Checkout Abandonment",
+      "before": "78%",
+      "after": "64%",
+      "change": "-14pp"
+    },
+    {
+      "label": "Annual Store Revenue",
+      "before": "£290K",
+      "after": "£445K",
+      "change": "+53%"
+    }
+  ],
+  "tools": [
+    "WooCommerce",
+    "WordPress",
+    "Yoast SEO",
+    "Google Analytics 4",
+    "Google Tag Manager",
+    "Hotjar",
+    "Klaviyo"
+  ],
+  "featured": true,
+  "coverImage": "/images/case-studies/woocommerce.jpg",
+  "headlineMetrics": [
+    { "label": "CVR Lift", "value": "+67%" },
+    { "label": "Page Speed", "value": "92/100" },
+    { "label": "Revenue", "value": "+53%" }
+  ]
+}

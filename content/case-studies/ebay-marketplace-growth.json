@@ -1,0 +1,58 @@
+{
+  "slug": "ebay-marketplace-growth",
+  "title": "eBay Growth: Promoted Listings & 72% Revenue Increase",
+  "channels": ["ebay"],
+  "industry": "Consumer Goods — UK",
+  "role": "E-commerce Manager",
+  "timeline": "8 months",
+  "summary": "Rebuilt eBay store architecture, launched Promoted Listings campaigns, and refreshed 340+ listings to deliver sustained marketplace revenue growth.",
+  "challenge": "eBay revenue had stagnated at £180K annually with poor listing visibility, outdated imagery, and no paid promotion strategy. Store conversion lagged behind Amazon by 40%, and seller defect rate was approaching warning thresholds.",
+  "strategy": "Treated eBay as a dedicated reach channel with its own merchandising and promotion budget. Prioritised listing quality refresh, then layered Promoted Listings with ROAS targets per category before optimising store navigation and trust signals.",
+  "implementation": [
+    "Refreshed 340+ listings with unified imagery, SEO-optimised titles, and item specifics",
+    "Launched eBay Promoted Listings with category-level ROAS targets and bid management",
+    "Restructured eBay Store categories for improved product discovery",
+    "Implemented competitive pricing rules aligned with Amazon anchor pricing",
+    "Built weekly eBay Seller Hub reporting tracking impressions, CTR, and conversion"
+  ],
+  "results": [
+    {
+      "label": "eBay Revenue",
+      "before": "£180K/yr",
+      "after": "£310K/yr",
+      "change": "+72%"
+    },
+    {
+      "label": "Promoted Listings ROAS",
+      "before": "N/A",
+      "after": "4.2x",
+      "change": "New programme"
+    },
+    {
+      "label": "Listing Impressions",
+      "before": "120K/mo",
+      "after": "285K/mo",
+      "change": "+138%"
+    },
+    {
+      "label": "Seller Defect Rate",
+      "before": "1.8%",
+      "after": "0.4%",
+      "change": "-1.4pp"
+    }
+  ],
+  "tools": [
+    "eBay Seller Hub",
+    "eBay Promoted Listings",
+    "Google Analytics 4",
+    "Microsoft Excel",
+    "Looker Studio"
+  ],
+  "featured": false,
+  "coverImage": "/images/case-studies/ebay.jpg",
+  "headlineMetrics": [
+    { "label": "Revenue Growth", "value": "+72%" },
+    { "label": "ROAS", "value": "4.2x" },
+    { "label": "Listings", "value": "340+" }
+  ]
+}

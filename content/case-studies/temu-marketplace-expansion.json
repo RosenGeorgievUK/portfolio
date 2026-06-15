@@ -1,0 +1,58 @@
+{
+  "slug": "temu-marketplace-expansion",
+  "title": "Temu Expansion: 95 SKUs & Margin-Positive Volume Growth",
+  "channels": ["temu"],
+  "industry": "Consumer Goods — UK Multi-Channel",
+  "role": "E-commerce Manager",
+  "timeline": "4 months",
+  "summary": "Structured and launched a margin-positive Temu catalogue with automated repricing floors and cross-channel inventory sync — adding an incremental volume revenue stream.",
+  "challenge": "Temu represented an untapped volume opportunity but carried significant margin risk if listings were deployed without careful SKU selection and pricing floors. No existing processes existed for Temu compliance, catalogue mapping, or inventory sync with Amazon and eBay.",
+  "strategy": "Built a channel-tier pricing framework with Temu as the volume driver for selected margin-positive SKUs only. Modelled margin impact per SKU before listing, set automated repricing floors, and integrated inventory sync rules to prevent overselling.",
+  "implementation": [
+    "Analysed 400+ SKUs for margin suitability — shortlisted 95 for Temu launch",
+    "Set automated repricing floor rules tied to cost price and fulfilment costs",
+    "Mapped catalogue from existing Amazon/eBay listings with Temu-specific titles",
+    "Implemented cross-channel inventory sync with safety stock buffers per platform",
+    "Built weekly Temu P&L reporting integrated into unified Looker Studio dashboard"
+  ],
+  "results": [
+    {
+      "label": "Temu SKUs Live",
+      "before": "0",
+      "after": "95",
+      "change": "New channel"
+    },
+    {
+      "label": "Temu Monthly Revenue",
+      "before": "£0",
+      "after": "£28K/mo",
+      "change": "New stream"
+    },
+    {
+      "label": "Average Margin",
+      "before": "N/A",
+      "after": "18%",
+      "change": "Above floor"
+    },
+    {
+      "label": "Stock-Out Incidents",
+      "before": "N/A",
+      "after": "<2%",
+      "change": "Sync success"
+    }
+  ],
+  "tools": [
+    "Temu Seller Center",
+    "Microsoft Excel",
+    "Looker Studio",
+    "Amazon Seller Central",
+    "eBay Seller Hub"
+  ],
+  "featured": false,
+  "coverImage": "/images/case-studies/temu.jpg",
+  "headlineMetrics": [
+    { "label": "SKUs Listed", "value": "95" },
+    { "label": "Monthly Rev", "value": "£28K" },
+    { "label": "Margin", "value": "18%" }
+  ]
+}

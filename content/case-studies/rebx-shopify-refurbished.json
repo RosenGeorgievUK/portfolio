@@ -1,0 +1,77 @@
+{
+  "slug": "rebx-shopify-refurbished",
+  "title": "REBX: Refurbished Tech on Shopify, eBay & Temu",
+  "channels": ["shopify", "ebay", "temu"],
+  "industry": "Consumer Electronics — UK Refurbished",
+  "role": "E-commerce Manager",
+  "timeline": "Ongoing",
+  "summary": "Scaled RebX across Shopify DTC, the rebxshop eBay store (190K+ sold), and Temu mall — 82 curated SKUs with local-warehouse fulfilment — through certified grading, trade-in inventory flows, and unified marketplace trust architecture.",
+  "challenge": "Refurbished tech buyers need certainty on condition, warranty, and returns before committing to premium devices online. RebX had to compete with new retail and fragmented marketplace listings while building trust at scale — across owned Shopify, eBay search traffic, and Temu's price-sensitive discovery audience simultaneously.",
+  "strategy": "Unified brand positioning ('Refurbished. Reimagined.') across all channels. Led Shopify with interactive grading and trade-in flywheel; ran eBay as high-volume reach with custom store branding at 99.6% feedback; launched Temu with margin-screened refurbished SKUs, local-warehouse badges, and clear condition grades (Used·Very Good → Used·Fair) to capture incremental volume without eroding brand trust.",
+  "implementation": [
+    "Launched Shopify storefront across smartphones, gaming consoles, smart watches, audio, laptops, and home appliances",
+    "Built RebX Certified Refurbished grading system with interactive 3D grade explorer and 12-month warranty on all devices",
+    "Deployed trade-in valuation flow feeding refurbished inventory back into Shopify, eBay, and Temu catalogues",
+    "Designed custom eBay Store with category tiles and promotional deal modules across 9,000+ active listings",
+    "Launched Temu mall with 82 margin-positive SKUs — Apple Watches, Sony audio, PS4 Pro, and smartwatch accessories",
+    "Structured Temu listings with local-warehouse fulfilment, 1-day delivery badges, and transparent used-condition labels"
+  ],
+  "results": [
+    {
+      "label": "eBay items sold",
+      "before": "—",
+      "after": "190K+",
+      "change": "Volume"
+    },
+    {
+      "label": "eBay feedback",
+      "before": "—",
+      "after": "99.6%",
+      "change": "Positive"
+    },
+    {
+      "label": "Temu catalogue",
+      "before": "—",
+      "after": "82 SKUs",
+      "change": "Live mall"
+    },
+    {
+      "label": "Temu rating",
+      "before": "—",
+      "after": "4.5★",
+      "change": "Reviews"
+    }
+  ],
+  "tools": [
+    "Shopify",
+    "eBay Seller Hub",
+    "eBay Promoted Listings",
+    "Temu Seller Center",
+    "Google Analytics 4",
+    "Google Tag Manager",
+    "Klaviyo",
+    "Klarna",
+    "Clearpay"
+  ],
+  "featured": true,
+  "coverImage": "/images/case-studies/rebx-home.png",
+  "galleryImages": [
+    "/images/case-studies/rebx-home.png",
+    "/images/case-studies/rebx-ebay-store.png",
+    "/images/case-studies/rebx-temu-store.png",
+    "/images/case-studies/rebx-grading.png",
+    "/images/case-studies/rebx-trade-in.png",
+    "/images/case-studies/rebx-temu-products.png",
+    "/images/case-studies/rebx-ebay-listings.png"
+  ],
+  "projectLinks": [
+    { "label": "Shopify store", "url": "https://rebx.co.uk/" },
+    { "label": "eBay store", "url": "https://www.ebay.co.uk/str/rebxshop" },
+    { "label": "Temu mall", "url": "https://www.temu.com/mall.html?mall_id=670702094587285" }
+  ],
+  "headlineMetrics": [
+    { "label": "eBay sold", "value": "190K+" },
+    { "label": "Temu SKUs", "value": "82" },
+    { "label": "Rating", "value": "4.5★" }
+  ]
+}

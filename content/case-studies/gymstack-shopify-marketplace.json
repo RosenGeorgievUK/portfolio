@@ -1,0 +1,64 @@
+{
+  "slug": "gymstack-shopify-marketplace",
+  "title": "Gymstack: UK Supplement Marketplace on Shopify",
+  "channels": ["shopify"],
+  "industry": "Sports Nutrition & Supplements — UK",
+  "role": "E-commerce Manager",
+  "timeline": "Ongoing",
+  "summary": "Built and scaled Gymstack — a curated Shopify marketplace hosting 300+ supplement brands — through category-led merchandising, promotional mechanics, and an evidence-based content hub driving organic acquisition.",
+  "challenge": "The UK supplement market is fragmented across hundreds of niche brands with inconsistent PDP quality, weak discoverability, and low trust signals. Gymstack needed a marketplace experience that simplified product discovery, supported multi-brand promotions, and converted health-conscious shoppers without sacrificing margin.",
+  "strategy": "Positioned Gymstack as 'the supplement marketplace' with dual discovery paths (shop by brand, shop by category), anchored homepage merchandising around best sellers and seasonal campaigns, and layered a content programme to capture high-intent search traffic. Promotional architecture (flash sales, 3-for-2 bundles, free delivery threshold) was designed to lift AOV while protecting brand equity.",
+  "implementation": [
+    "Launched Shopify storefront with 300+ curated brands across sports nutrition, health & wellness, and food & drink",
+    "Built category pill navigation and best-seller modules to surface high-velocity SKUs above the fold",
+    "Deployed promotional campaigns including Grenade 3-for-2, flash sale overlays, and £75 free UK delivery threshold",
+    "Established 'Brand of the Month' and seasonal hero rotations to drive discovery across the catalogue",
+    "Created evidence-based blog hub with topic filters (collagen, vitamin D, electrolytes) for SEO and trust",
+    "Integrated voice search, multi-language support, and affiliate/athlete programme landing pages"
+  ],
+  "results": [
+    {
+      "label": "Brand catalogue",
+      "before": "—",
+      "after": "300+",
+      "change": "Curated"
+    },
+    {
+      "label": "Category coverage",
+      "before": "—",
+      "after": "10+",
+      "change": "Pill nav"
+    },
+    {
+      "label": "Content hub",
+      "before": "—",
+      "after": "Live",
+      "change": "SEO channel"
+    },
+    {
+      "label": "Promo mechanics",
+      "before": "—",
+      "after": "3+ types",
+      "change": "AOV drivers"
+    }
+  ],
+  "tools": [
+    "Shopify",
+    "Google Analytics 4",
+    "Google Tag Manager",
+    "Klaviyo",
+    "Looker Studio"
+  ],
+  "featured": true,
+  "coverImage": "/images/case-studies/gymstack-home.png",
+  "galleryImages": [
+    "/images/case-studies/gymstack-home.png",
+    "/images/case-studies/gymstack-blog.png"
+  ],
+  "projectUrl": "https://gymstack.uk/",
+  "headlineMetrics": [
+    { "label": "Brands", "value": "300+" },
+    { "label": "Platform", "value": "Shopify" },
+    { "label": "Market", "value": "UK" }
+  ]
+}

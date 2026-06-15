@@ -1,0 +1,58 @@
+{
+  "slug": "amazon-marketplace-growth",
+  "title": "Amazon Marketplace Growth: 47% Revenue Lift in 6 Months",
+  "channels": ["amazon", "amazon-renew"],
+  "industry": "Consumer Electronics — UK",
+  "role": "E-commerce Manager",
+  "timeline": "6 months",
+  "summary": "Rebuilt Amazon listing architecture, launched the Renew programme, and optimised Buy Box strategy to reverse a revenue decline and deliver sustained marketplace growth.",
+  "challenge": "Amazon revenue had fallen 22% YoY due to listing suppressions, inconsistent pricing against competitors, and no structured approach to the Renew certified refurbished programme. Buy Box win rate sat at 71% against a category benchmark of 90%+.",
+  "strategy": "Prioritised account health recovery first, then layered Renew as an incremental revenue stream while rebuilding core ASIN performance through enhanced A+ content, keyword architecture, and dynamic repricing tied to fulfilment metrics.",
+  "implementation": [
+    "Audited 420+ ASINs for suppression triggers and fixed 89 listing compliance issues within 3 weeks",
+    "Launched Amazon Renew programme with 65 SKUs, custom grading SOPs, and warranty messaging",
+    "Implemented repricing rules aligned to FBA inventory levels and competitor Buy Box data",
+    "Refreshed A+ content and storefront modules to improve conversion on top 20 revenue-driving ASINs",
+    "Built weekly Seller Central reporting dashboard tracking BSR, Buy Box %, and session-to-order rate"
+  ],
+  "results": [
+    {
+      "label": "Amazon Revenue",
+      "before": "£680K/yr",
+      "after": "£1.0M/yr",
+      "change": "+47%"
+    },
+    {
+      "label": "Buy Box Win Rate",
+      "before": "71%",
+      "after": "94%",
+      "change": "+23pp"
+    },
+    {
+      "label": "Renew Programme Revenue",
+      "before": "£0",
+      "after": "£180K/yr",
+      "change": "New channel"
+    },
+    {
+      "label": "Listing Health Score",
+      "before": "72%",
+      "after": "98%",
+      "change": "+26pp"
+    }
+  ],
+  "tools": [
+    "Amazon Seller Central",
+    "Helium 10",
+    "Jungle Scout",
+    "Google Analytics 4",
+    "Looker Studio"
+  ],
+  "featured": true,
+  "coverImage": "/images/case-studies/amazon.jpg",
+  "headlineMetrics": [
+    { "label": "Revenue Growth", "value": "+47%" },
+    { "label": "Buy Box Rate", "value": "94%" },
+    { "label": "Renew Revenue", "value": "£180K" }
+  ]
+}

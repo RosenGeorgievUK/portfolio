@@ -1,0 +1,59 @@
+{
+  "slug": "multi-channel-launch",
+  "title": "Multi-Channel Expansion: eBay, OnBuy & Temu Integration",
+  "channels": ["ebay", "onbuy", "temu", "amazon"],
+  "industry": "Consumer Goods — UK Multi-Channel",
+  "role": "E-commerce Manager",
+  "timeline": "8 months",
+  "summary": "Unified catalogue, pricing, and inventory across eBay, OnBuy, and Temu while maintaining Amazon as the anchor channel — adding £380K incremental annual revenue without operational breakdown.",
+  "challenge": "Revenue was over-concentrated on Amazon (78% of total GMV), creating platform risk. eBay and OnBuy had legacy listings with poor imagery and no promoted listing strategy. Temu represented an untapped volume opportunity but required careful margin modelling.",
+  "strategy": "Built a channel-tier pricing framework: Amazon as premium anchor, eBay/OnBuy as reach channels with promoted visibility, and Temu as volume driver for selected margin-positive SKUs. Centralised inventory sync rules to prevent overselling during peak periods.",
+  "implementation": [
+    "Migrated 340 listings to OnBuy with unified imagery, titles, and category mapping",
+    "Launched eBay Promoted Listings campaigns with ROAS targets per category",
+    "Structured Temu catalogue with 95 margin-positive SKUs and automated repricing floors",
+    "Implemented cross-channel inventory sync with safety stock buffers per platform",
+    "Created unified weekly P&L reporting across all 6 channels in Looker Studio"
+  ],
+  "results": [
+    {
+      "label": "Total Channel Revenue",
+      "before": "£1.6M/yr",
+      "after": "£2.4M/yr",
+      "change": "+50%"
+    },
+    {
+      "label": "eBay Revenue",
+      "before": "£180K/yr",
+      "after": "£310K/yr",
+      "change": "+72%"
+    },
+    {
+      "label": "OnBuy Revenue",
+      "before": "£40K/yr",
+      "after": "£145K/yr",
+      "change": "+263%"
+    },
+    {
+      "label": "Amazon Revenue Share",
+      "before": "78%",
+      "after": "58%",
+      "change": "Risk reduced"
+    }
+  ],
+  "tools": [
+    "eBay Seller Hub",
+    "OnBuy Partner Portal",
+    "Temu Seller Center",
+    "Amazon Seller Central",
+    "Looker Studio",
+    "Microsoft Excel"
+  ],
+  "featured": false,
+  "coverImage": "/images/case-studies/multi-channel.jpg",
+  "headlineMetrics": [
+    { "label": "Total GMV", "value": "+50%" },
+    { "label": "eBay Growth", "value": "+72%" },
+    { "label": "Channels", "value": "6" }
+  ]
+}
