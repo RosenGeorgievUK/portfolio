@@ -44,6 +44,14 @@ export type ChannelExecution = {
   screenshots: ChannelScreenshot[];
 };
 
+export type OperationsProgram = {
+  title: string;
+  channel?: Channel;
+  problem: string;
+  approach: string;
+  highlights: string[];
+};
+
 export type CaseStudy = {
   slug: string;
   title: string;
@@ -56,6 +64,7 @@ export type CaseStudy = {
   strategy: string;
   implementation: string[];
   channelExecution?: ChannelExecution[];
+  operationsPrograms?: OperationsProgram[];
   results: CaseStudyResult[];
   tools: string[];
   featured: boolean;

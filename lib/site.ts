@@ -53,6 +53,7 @@ export const siteConfig = {
         "Built multi-channel refurbished programme across DTC and marketplaces",
         "Scaled eBay store to 190K+ items sold at 99.6% positive feedback",
         "Maintained 4.4★ Back Market seller rating across 88-product catalogue",
+        "Built eBay returns bridge — API dashboard + OCR scanning linking processing and CS",
       ],
     },
     {
@@ -84,11 +85,15 @@ export const siteConfig = {
       domain: "Analytics & reporting",
       description: "GA4, GTM, Looker Studio — funnel measurement, stakeholder dashboards",
     },
+    {
+      domain: "Operations & systems",
+      description: "eBay API integrations, OCR returns intake, cross-team workflow dashboards",
+    },
   ] satisfies ExpertiseDomain[],
   channelExpertise: [
     { channel: "amazon", proofPoint: "Marketplace ops · listing architecture · Renew" },
     { channel: "tiktok", proofPoint: "Social commerce · shop launch · creator programmes" },
-    { channel: "ebay", proofPoint: "REBX · 190K+ sold · 99.6% feedback · 9K+ listings" },
+    { channel: "ebay", proofPoint: "190K+ sold · eBay API returns · OCR ops dashboard" },
     { channel: "shopify", proofPoint: "Gymstack · REBX · 300+ brands & certified refurb" },
     { channel: "woocommerce", proofPoint: "DTC rebuild · CRO · checkout optimisation" },
     { channel: "temu", proofPoint: "REBX mall · 82 SKUs · 4.5★ · local warehouse" },

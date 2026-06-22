@@ -5,14 +5,30 @@
   "industry": "Consumer Electronics — UK Refurbished",
   "role": "E-commerce Manager",
   "timeline": "Ongoing",
-  "summary": "Owned RebX end-to-end across DTC and marketplaces — Shopify, eBay (190K+ sold), Back Market (88 products, 4.4★), and Temu (82 SKUs) — through unified grading, trade-in inventory, and channel-tier merchandising.",
-  "challenge": "Refurbished tech requires trust at every touchpoint. RebX needed one operating model — certified quality, clear grades, warranty, returns — deployed across an owned Shopify channel and three marketplace reach layers, without fragmenting brand, inventory, or margin discipline.",
-  "strategy": "Ran a four-tier channel architecture: Shopify as the DTC anchor, eBay as the volume engine, Back Market as the refurbished-native marketplace (4 years trusted, category-rated reviews), and Temu as a margin-screened discovery layer. Shared inventory logic and RebX Certified positioning tied the programme together.",
+  "summary": "Owned RebX end-to-end across DTC and marketplaces — Shopify, eBay (190K+ sold), Back Market (4.4★), and Temu — plus custom eBay returns infrastructure (API + OCR dashboard) bridging processing and customer service.",
+  "challenge": "Refurbished tech requires trust at every touchpoint. At eBay volume, returns also broke operationally — processing, customer service, and Seller Hub lived in separate tools with no shared context. RebX needed one commerce operating model and one returns resolution layer across channels.",
+  "strategy": "Ran a four-tier sales architecture while championing internal systems for high-volume eBay returns: eBay API ingestion into a custom dashboard, OCR scanning at warehouse intake, and a shared workflow so processing and CS resolve the same case with the same evidence.",
   "implementation": [
     "Built RebX Certified Refurbished standard — 90-point quality check, four cosmetic grades, 12-month warranty — applied across all channels",
     "Deployed trade-in valuation flow as the inventory flywheel feeding Shopify, eBay, Back Market, and Temu catalogues",
+    "Championed custom eBay returns platform — API sync, OCR intake scanning, unified dashboard for processing and CS",
     "Established channel-tier pricing and listing rules to protect margin on discovery channels while maximising reach on eBay and Back Market",
     "Unified PDP trust architecture: grading guides, warranty terms, and condition labels adapted per platform"
+  ],
+  "operationsPrograms": [
+    {
+      "title": "eBay returns ops bridge",
+      "channel": "ebay",
+      "problem": "With 190K+ items sold, eBay returns scaled faster than the manual workflow. Warehouse processing scanned and graded devices in one system; customer service worked cases in Seller Hub with no linked intake evidence. Disputes stalled on back-and-forth between teams.",
+      "approach": "Designed and championed a custom returns programme: eBay API feeds return cases into a central dashboard; OCR scanning at processing captures label, serial, and condition data on intake; CS and warehouse share one case view to close returns and buyer issues faster.",
+      "highlights": [
+        "Integrated eBay Post-Order API — return requests, reasons, tracking, and case status sync into a single dashboard",
+        "OCR scanning at warehouse intake auto-captures return labels, serials/IMEI, and device identifiers against the open case",
+        "Unified case view links API return data with physical scan evidence — processing status visible to CS in real time",
+        "Customer service resolves buyer queries and partial-refund decisions without leaving the dashboard or re-asking warehouse",
+        "Processing team flags grading discrepancies and damage with scanned proof attached to the same eBay return ID"
+      ]
+    }
   ],
   "channelExecution": [
     {
@@ -45,7 +61,7 @@
       "highlights": [
         "Custom eBay Store — 'Refurbished. Reimagined.' branding",
         "9,000+ active listings · 190K+ items sold · 99.6% feedback",
-        "Category merchandising and promotional deal modules"
+        "Custom returns ops — eBay API dashboard + OCR intake bridging processing and CS"
       ],
       "metric": { "label": "Items sold", "value": "190K+" },
       "screenshots": [
@@ -114,24 +130,26 @@
       "change": "Volume"
     },
     {
-      "label": "Back Market rating",
-      "before": "—",
-      "after": "4.4★",
-      "change": "4 years"
+      "label": "Returns workflow",
+      "before": "Manual",
+      "after": "API + OCR",
+      "change": "Unified"
     },
     {
-      "label": "Cross-channel SKUs",
-      "before": "—",
-      "after": "9K+ / 88 / 82",
-      "change": "eBay / BM / Temu"
+      "label": "CS / processing",
+      "before": "Silos",
+      "after": "1 dashboard",
+      "change": "Bridge"
     }
   ],
   "tools": [
     "Shopify",
     "eBay Seller Hub",
+    "eBay Post-Order API",
     "eBay Promoted Listings",
     "Back Market Seller Portal",
     "Temu Seller Center",
+    "OCR intake scanning",
     "Google Analytics 4",
     "Google Tag Manager",
     "Klaviyo",
@@ -149,6 +167,6 @@
   "headlineMetrics": [
     { "label": "Channels", "value": "4" },
     { "label": "eBay sold", "value": "190K+" },
-    { "label": "BM rating", "value": "4.4★" }
+    { "label": "Returns ops", "value": "API+OCR" }
   ]
 }

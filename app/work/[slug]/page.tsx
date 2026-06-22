@@ -234,6 +234,47 @@ export default async function CaseStudyPage({ params }: PageProps) {
         </section>
       ) : null}
 
+      {study.operationsPrograms && study.operationsPrograms.length > 0 ? (
+        <section className="mt-16">
+          <h2 className="font-mono text-xs uppercase tracking-widest text-muted">
+            Systems & operations
+          </h2>
+          <div className="mt-8 space-y-px border border-border bg-border">
+            {study.operationsPrograms.map((program) => (
+              <div key={program.title} className="bg-background p-8">
+                <div className="flex flex-wrap items-center gap-3">
+                  {program.channel ? (
+                    <ChannelBadge channel={program.channel} size="sm" />
+                  ) : null}
+                  <h3 className="font-heading text-lg font-medium text-foreground">
+                    {program.title}
+                  </h3>
+                </div>
+                <p className="mt-6 text-sm leading-relaxed text-muted">
+                  <span className="font-mono text-xs uppercase tracking-wider text-foreground">
+                    Problem ·{" "}
+                  </span>
+                  {program.problem}
+                </p>
+                <p className="mt-4 text-sm leading-relaxed text-muted">
+                  <span className="font-mono text-xs uppercase tracking-wider text-foreground">
+                    Approach ·{" "}
+                  </span>
+                  {program.approach}
+                </p>
+                <ul className="mt-6 space-y-3">
+                  {program.highlights.map((item) => (
+                    <li key={item} className="text-sm leading-relaxed text-muted">
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </section>
+      ) : null}
+
       <section className="mt-16">
         <h2 className="font-mono text-xs uppercase tracking-widest text-muted">
           Impact
