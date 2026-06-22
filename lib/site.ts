@@ -6,6 +6,13 @@ export type Experience = {
   period: string;
   scope: string;
   highlights: string[];
+  caseStudySlug?: string;
+  metrics?: { label: string; value: string }[];
+};
+
+export type AboutPrinciple = {
+  title: string;
+  description: string;
 };
 
 export type ExpertiseDomain = {
@@ -24,12 +31,45 @@ export const siteConfig = {
   elevatorPitch:
     "I lead e-commerce growth across Amazon, TikTok Shop, eBay, Shopify, WooCommerce, and Temu — owning revenue outcomes from strategy through operational delivery.",
   aboutSummary:
-    "Operator with a track record of building scalable commerce systems across marketplaces and DTC. I work at the intersection of growth, analytics, and cross-functional execution.",
+    "E-commerce operator building multi-channel revenue systems across marketplaces and DTC — from listing architecture to internal ops tooling.",
+  aboutLead:
+    "I own commerce end-to-end: channel strategy, storefront execution, analytics, and the operational systems that keep high-volume programmes running.",
   aboutNarrative: [
-    "I've spent the last several years driving measurable revenue growth across six commerce channels, managing £2.4M+ in annual GMV and 1,200+ SKUs. My work spans marketplace operations, conversion optimisation, and the analytics infrastructure that makes both possible.",
-    "I approach commerce as a systems problem: acquisition, conversion, retention, and operations must move together. I've led platform launches, rebuilt storefronts, and established reporting frameworks that align marketing, product, and leadership around the same numbers.",
-    "I'm looking for a senior e-commerce role where I can own channel performance end-to-end and build durable growth engines — not just optimise individual listings.",
+    "The last several years have been spent scaling verified programmes — REBX across Shopify, eBay, Back Market, and Temu; Gymstack as a 300+ brand Shopify marketplace — while building the reporting and workflow infrastructure leadership teams actually use.",
+    "I treat commerce as a systems problem. Acquisition, conversion, retention, and operations have to move together. That means channel-native merchandising, margin-aware pricing tiers, and internal tooling when manual workflows break at volume — like eBay returns bridging warehouse processing and customer service.",
   ],
+  aboutPrinciples: [
+    {
+      title: "Systems over silos",
+      description:
+        "One operating model across channels — shared trust standards, pricing rules, and dashboards so teams work from the same evidence.",
+    },
+    {
+      title: "Evidence before opinion",
+      description:
+        "GA4, Seller Central, and custom ops data drive decisions. Dashboards exist so stakeholders see the same numbers, not slide decks.",
+    },
+    {
+      title: "Channel-native execution",
+      description:
+        "Each platform gets its own merchandising, compliance, and conversion logic — not a Shopify catalogue pasted onto eBay.",
+    },
+    {
+      title: "Ops that scale with volume",
+      description:
+        "When returns, listings, or CS cases outgrow spreadsheets, I champion internal tooling — API sync, OCR intake, unified case views.",
+    },
+  ] satisfies AboutPrinciple[],
+  aboutIntent: {
+    headline: "Senior e-commerce leadership with end-to-end ownership.",
+    description:
+      "Looking for a role where I can own channel P&L, build durable growth systems, and lead cross-functional execution — not just optimise individual listings.",
+    seeking: [
+      "Multi-channel or marketplace-heavy businesses",
+      "Operator roles with systems and analytics scope",
+      "Teams scaling DTC + marketplace together",
+    ],
+  },
   headlineMetrics: [
     { label: "eBay sold", value: "190K+" },
     { label: "Brands", value: "300+" },
@@ -48,7 +88,12 @@ export const siteConfig = {
       company: "REBX Ltd",
       role: "E-commerce Manager",
       period: "2022 — Present",
-      scope: "Shopify · eBay · Temu · 9K+ listings",
+      scope: "Shopify · eBay · Back Market · Temu",
+      caseStudySlug: "rebx-shopify-refurbished",
+      metrics: [
+        { label: "eBay sold", value: "190K+" },
+        { label: "Channels", value: "4" },
+      ],
       highlights: [
         "Built multi-channel refurbished programme across DTC and marketplaces",
         "Scaled eBay store to 190K+ items sold at 99.6% positive feedback",
@@ -61,6 +106,11 @@ export const siteConfig = {
       role: "E-commerce Manager",
       period: "2023 — Present",
       scope: "Shopify marketplace · 300+ brands",
+      caseStudySlug: "gymstack-shopify-marketplace",
+      metrics: [
+        { label: "Brands", value: "300+" },
+        { label: "Platform", value: "Shopify" },
+      ],
       highlights: [
         "Launched supplement marketplace with 300+ curated brands",
         "Built category-led merchandising and evidence-based content hub",
