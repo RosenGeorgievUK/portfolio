@@ -4,6 +4,8 @@ import Image from "next/image";
 import { useMemo, useState } from "react";
 
 import { ChannelBadge } from "@/components/ui/ChannelBadge";
+import { SectionLabel } from "@/components/ui/SectionLabel";
+import { getCaseStudyCardSummary } from "@/lib/case-study-display";
 import { channelLabels } from "@/lib/channels";
 import { getAllCaseStudies } from "@/lib/case-studies";
 import { PRIMARY_CHANNELS, type Channel } from "@/lib/types";
@@ -22,11 +24,11 @@ export function WorkIndex() {
 
   return (
     <section className="mx-auto max-w-5xl px-6 pb-24 pt-32">
-      <p className="font-mono text-xs uppercase tracking-widest text-muted">Work</p>
+      <SectionLabel>Work</SectionLabel>
       <h1 className="mt-3 font-heading text-4xl font-semibold tracking-tight text-foreground md:text-5xl">
         Case studies
       </h1>
-      <p className="mt-6 max-w-xl text-base text-muted">
+      <p className="prose mt-6 max-w-xl text-prose">
         Revenue programmes across Amazon, TikTok Shop, eBay, Shopify, WooCommerce, and Temu.
       </p>
 
@@ -86,7 +88,9 @@ export function WorkIndex() {
                 <h2 className="font-heading text-lg font-medium text-foreground group-hover:text-muted md:text-xl">
                   {study.title}
                 </h2>
-                <p className="mt-2 max-w-lg text-sm text-muted">{study.summary}</p>
+                <p className="mt-2 line-clamp-3 max-w-lg text-base text-prose">
+                  {getCaseStudyCardSummary(study)}
+                </p>
                 <div className="mt-3 flex flex-wrap gap-2">
                   {study.channels.map((ch) => (
                     <ChannelBadge key={ch} channel={ch} size="sm" />

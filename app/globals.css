@@ -5,9 +5,11 @@
   --foreground: #fafafa;
   --surface: #18181b;
   --muted: #a1a1aa;
+  --prose: #d4d4d8;
   --border: #27272a;
   --accent: #fafafa;
   --accent-muted: #71717a;
+  --prose-width: 42rem;
 }
 
 @theme inline {
@@ -15,30 +17,65 @@
   --color-foreground: var(--foreground);
   --color-surface: var(--surface);
   --color-muted: var(--muted);
+  --color-prose: var(--prose);
   --color-border: var(--border);
   --color-accent: var(--accent);
   --color-accent-muted: var(--accent-muted);
-  --font-sans: var(--font-body);
-  --font-heading: var(--font-heading);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+  --font-heading: var(--font-sans);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-body), system-ui, sans-serif;
+  font-family: var(--font-sans), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
 .font-heading {
-  font-family: var(--font-heading), system-ui, sans-serif;
+  font-family: var(--font-sans), system-ui, sans-serif;
   letter-spacing: -0.03em;
+}
+
+.prose {
+  color: var(--prose);
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  max-width: var(--prose-width);
+}
+
+.prose-lg {
+  font-size: 1.125rem;
+  line-height: 1.7;
+}
+
+.label {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.6875rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.prose-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.prose-list > li {
+  position: relative;
+  padding-left: 1.25rem;
+}
+
+.prose-list > li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--muted);
 }
 
 ::selection {
   background: #fafafa;
   color: #09090b;
-}
-
-.prose-muted {
-  color: var(--muted);
 }

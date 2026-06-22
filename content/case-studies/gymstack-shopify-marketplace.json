@@ -5,9 +5,10 @@
   "industry": "Sports Nutrition & Supplements — UK",
   "role": "E-commerce Manager",
   "timeline": "Ongoing",
-  "summary": "Built and scaled Gymstack — a curated Shopify marketplace hosting 300+ supplement brands — through category-led merchandising, promotional mechanics, and an evidence-based content hub driving organic acquisition.",
+  "summary": "Built and scaled Gymstack — a curated Shopify marketplace hosting 300+ supplement brands — through category-led merchandising, promotional mechanics, and an evidence-based content hub.",
+  "cardSummary": "Curated Shopify marketplace with 300+ supplement brands, category merchandising, and an SEO content hub.",
   "challenge": "The UK supplement market is fragmented across hundreds of niche brands with inconsistent PDP quality, weak discoverability, and low trust signals. Gymstack needed a marketplace experience that simplified product discovery, supported multi-brand promotions, and converted health-conscious shoppers without sacrificing margin.",
-  "strategy": "Positioned Gymstack as 'the supplement marketplace' with dual discovery paths (shop by brand, shop by category), anchored homepage merchandising around best sellers and seasonal campaigns, and layered a content programme to capture high-intent search traffic. Promotional architecture (flash sales, 3-for-2 bundles, free delivery threshold) was designed to lift AOV while protecting brand equity.",
+  "strategy": "Positioned Gymstack as the supplement marketplace with dual discovery paths — shop by brand and shop by category. Homepage merchandising anchored on best sellers and seasonal campaigns; a content programme captured high-intent search traffic. Promotional architecture lifted AOV while protecting brand equity.",
   "implementation": [
     "Launched Shopify storefront with 300+ curated brands across sports nutrition, health & wellness, and food & drink",
     "Built category pill navigation and best-seller modules to surface high-velocity SKUs above the fold",

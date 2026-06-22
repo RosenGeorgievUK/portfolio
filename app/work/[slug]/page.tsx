@@ -4,13 +4,20 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 
+import { CaseStudyLayout } from "@/components/case-studies/CaseStudyLayout";
+import { ChannelEvidence } from "@/components/case-studies/ChannelEvidence";
+import type { CaseStudyNavItem } from "@/components/case-studies/CaseStudyNav";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { ChannelBadge } from "@/components/ui/ChannelBadge";
+import { Prose } from "@/components/ui/Prose";
+import { SectionLabel } from "@/components/ui/SectionLabel";
+import { getCaseStudyChallengeParagraphs } from "@/lib/case-study-display";
 import {
   getAllCaseStudies,
   getCaseStudyBySlug,
   getCaseStudySlugs,
 } from "@/lib/case-studies";
+import type { CaseStudy } from "@/lib/types";
 
 type PageProps = { params: Promise<{ slug: string }> };
 
@@ -28,26 +35,29 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-export default async function CaseStudyPage({ params }: PageProps) {
-  const { slug } = await params;
-  const study = getCaseStudyBySlug(slug);
-  if (!study) notFound();
+function buildNavItems(study: CaseStudy): CaseStudyNavItem[] {
+  const items: CaseStudyNavItem[] = [
+    { id: "problem", label: "Problem" },
+    { id: "approach", label: "Approach" },
+    { id: "execution", label: "Execution" },
+  ];
 
-  const related = getAllCaseStudies()
-    .filter((s) => s.slug !== study.slug && s.featured)
-    .slice(0, 3);
+  if (study.channelExecution?.length) {
+    items.push({ id: "channels", label: "Channels" });
+  }
 
+  if (study.operationsPrograms?.length) {
+    items.push({ id: "systems", label: "Systems" });
+  }
+
+  items.push({ id: "impact", label: "Impact" }, { id: "stack", label: "Stack" });
+
+  return items;
+}
+
+function CaseStudyHeader({ study }: { study: CaseStudy }) {
   return (
-    <article className="mx-auto max-w-3xl px-6 pb-24 pt-32">
-      <JsonLd
-        type="caseStudy"
-        caseStudy={{
-          title: study.title,
-          description: study.summary,
-          url: `https://your-domain.com/work/${study.slug}`,
-        }}
-      />
-
+    <>
       <Link
         href="/work"
         className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-muted hover:text-foreground"
@@ -72,7 +82,9 @@ export default async function CaseStudyPage({ params }: PageProps) {
         <span>{study.industry}</span>
       </div>
 
-      <p className="mt-10 text-lg leading-relaxed text-muted">{study.summary}</p>
+      <Prose size="lg" className="mt-10">
+        {study.summary}
+      </Prose>
 
       {study.projectLinks && study.projectLinks.length > 0 ? (
         <div className="mt-8 flex flex-wrap gap-6">
@@ -101,7 +113,28 @@ export default async function CaseStudyPage({ params }: PageProps) {
         </a>
       ) : null}
 
-      {!study.channelExecution?.length && study.coverImage ? (
+      <div className="mt-16 grid grid-cols-3 gap-px border border-border bg-border">
+        {study.headlineMetrics.map((metric) => (
+          <div key={metric.label} className="bg-background p-6">
+            <p className="font-heading text-2xl font-semibold text-foreground">
+              {metric.value}
+            </p>
+            <p className="mt-2 font-mono text-xs uppercase tracking-wider text-muted">
+              {metric.label}
+            </p>
+          </div>
+        ))}
+      </div>
+    </>
+  );
+}
+
+function SimpleCoverGallery({ study }: { study: CaseStudy }) {
+  if (study.channelExecution?.length) return null;
+
+  return (
+    <>
+      {study.coverImage ? (
         <div className="mt-12 overflow-hidden border border-border">
           <div className="relative aspect-[16/9] w-full">
             <Image
@@ -116,9 +149,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
         </div>
       ) : null}
 
-      {!study.channelExecution?.length &&
-      study.galleryImages &&
-      study.galleryImages.length > 1 ? (
+      {study.galleryImages && study.galleryImages.length > 1 ? (
         <div className="mt-8 grid gap-4 sm:grid-cols-2">
           {study.galleryImages.slice(1).map((image) => (
             <div key={image} className="overflow-hidden border border-border">
@@ -135,41 +166,40 @@ export default async function CaseStudyPage({ params }: PageProps) {
           ))}
         </div>
       ) : null}
+    </>
+  );
+}
 
-      <div className="mt-16 grid grid-cols-3 gap-px border border-border bg-border">
-        {study.headlineMetrics.map((metric) => (
-          <div key={metric.label} className="bg-background p-6">
-            <p className="font-heading text-2xl font-semibold text-foreground">
-              {metric.value}
-            </p>
-            <p className="mt-2 font-mono text-xs uppercase tracking-wider text-muted">
-              {metric.label}
-            </p>
-          </div>
-        ))}
-      </div>
+function CaseStudySections({
+  study,
+  related,
+}: {
+  study: CaseStudy;
+  related: CaseStudy[];
+}) {
+  const challengeParagraphs = getCaseStudyChallengeParagraphs(study);
 
-      <section className="mt-20 border-t border-border pt-12">
-        <h2 className="font-mono text-xs uppercase tracking-widest text-muted">
-          Problem
-        </h2>
-        <p className="mt-6 text-base leading-relaxed text-muted">{study.challenge}</p>
+  return (
+    <>
+      <section id="problem" className="scroll-mt-28 border-t border-border pt-12">
+        <SectionLabel>Problem</SectionLabel>
+        <div className="prose mt-6 space-y-5 text-prose">
+          {challengeParagraphs.map((paragraph) => (
+            <p key={paragraph.slice(0, 48)}>{paragraph}</p>
+          ))}
+        </div>
       </section>
 
-      <section className="mt-16">
-        <h2 className="font-mono text-xs uppercase tracking-widest text-muted">
-          Approach
-        </h2>
-        <p className="mt-6 text-base leading-relaxed text-muted">{study.strategy}</p>
+      <section id="approach" className="scroll-mt-28">
+        <SectionLabel>Approach</SectionLabel>
+        <Prose className="mt-6">{study.strategy}</Prose>
       </section>
 
-      <section className="mt-16">
-        <h2 className="font-mono text-xs uppercase tracking-widest text-muted">
-          Execution
-        </h2>
-        <ul className="mt-6 space-y-4">
+      <section id="execution" className="scroll-mt-28">
+        <SectionLabel>Execution</SectionLabel>
+        <ul className="prose-list mt-6 space-y-4">
           {study.implementation.map((item) => (
-            <li key={item} className="text-sm leading-relaxed text-muted">
+            <li key={item} className="text-base leading-relaxed text-prose">
               {item}
             </li>
           ))}
@@ -177,68 +207,20 @@ export default async function CaseStudyPage({ params }: PageProps) {
       </section>
 
       {study.channelExecution && study.channelExecution.length > 0 ? (
-        <section className="mt-16">
-          <h2 className="font-mono text-xs uppercase tracking-widest text-muted">
-            Channel evidence
-          </h2>
-          <div className="mt-8 space-y-16">
-            {study.channelExecution.map((block) => (
-              <div key={block.channel}>
-                <div className="flex flex-wrap items-start justify-between gap-4 border-b border-border pb-6">
-                  <div className="flex flex-wrap items-center gap-3">
-                    <ChannelBadge channel={block.channel} size="sm" />
-                    <span className="font-mono text-xs uppercase tracking-wider text-muted">
-                      {block.tier}
-                    </span>
-                  </div>
-                  <div className="text-right">
-                    <p className="font-heading text-lg font-semibold text-foreground">
-                      {block.metric.value}
-                    </p>
-                    <p className="mt-1 font-mono text-xs text-muted">
-                      {block.metric.label}
-                    </p>
-                  </div>
-                </div>
-
-                <div className="mt-6 space-y-6">
-                  {block.screenshots.map((shot, index) => (
-                    <figure key={shot.src} className="overflow-hidden border border-border">
-                      <div className="relative aspect-[16/9] w-full">
-                        <Image
-                          src={shot.src}
-                          alt={shot.caption}
-                          fill
-                          className="object-cover object-top"
-                          sizes="(max-width: 768px) 100vw, 768px"
-                          priority={index === 0}
-                        />
-                      </div>
-                      <figcaption className="border-t border-border px-6 py-4 font-mono text-xs text-muted">
-                        {shot.caption}
-                      </figcaption>
-                    </figure>
-                  ))}
-                </div>
-
-                <ul className="mt-6 space-y-3">
-                  {block.highlights.map((item) => (
-                    <li key={item} className="text-sm leading-relaxed text-muted">
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+        <section id="channels" className="scroll-mt-28">
+          <SectionLabel>Channel evidence</SectionLabel>
+          <p className="prose mt-4 max-w-none text-prose">
+            Live storefront proof across each tier of the sales architecture.
+          </p>
+          <div className="mt-8">
+            <ChannelEvidence blocks={study.channelExecution} />
           </div>
         </section>
       ) : null}
 
       {study.operationsPrograms && study.operationsPrograms.length > 0 ? (
-        <section className="mt-16">
-          <h2 className="font-mono text-xs uppercase tracking-widest text-muted">
-            Systems & operations
-          </h2>
+        <section id="systems" className="scroll-mt-28">
+          <SectionLabel>Systems & operations</SectionLabel>
           <div className="mt-8 space-y-px border border-border bg-border">
             {study.operationsPrograms.map((program) => (
               <div key={program.title} className="bg-background p-8">
@@ -246,25 +228,25 @@ export default async function CaseStudyPage({ params }: PageProps) {
                   {program.channel ? (
                     <ChannelBadge channel={program.channel} size="sm" />
                   ) : null}
-                  <h3 className="font-heading text-lg font-medium text-foreground">
+                  <h3 className="font-heading text-xl font-medium text-foreground">
                     {program.title}
                   </h3>
                 </div>
-                <p className="mt-6 text-sm leading-relaxed text-muted">
-                  <span className="font-mono text-xs uppercase tracking-wider text-foreground">
-                    Problem ·{" "}
-                  </span>
-                  {program.problem}
-                </p>
-                <p className="mt-4 text-sm leading-relaxed text-muted">
-                  <span className="font-mono text-xs uppercase tracking-wider text-foreground">
-                    Approach ·{" "}
-                  </span>
-                  {program.approach}
-                </p>
-                <ul className="mt-6 space-y-3">
+
+                <div className="mt-8 space-y-6">
+                  <div>
+                    <SectionLabel as="span">Problem</SectionLabel>
+                    <Prose className="mt-3 max-w-none">{program.problem}</Prose>
+                  </div>
+                  <div>
+                    <SectionLabel as="span">Approach</SectionLabel>
+                    <Prose className="mt-3 max-w-none">{program.approach}</Prose>
+                  </div>
+                </div>
+
+                <ul className="prose-list mt-8 space-y-3">
                   {program.highlights.map((item) => (
-                    <li key={item} className="text-sm leading-relaxed text-muted">
+                    <li key={item} className="text-base leading-relaxed text-prose">
                       {item}
                     </li>
                   ))}
@@ -275,29 +257,40 @@ export default async function CaseStudyPage({ params }: PageProps) {
         </section>
       ) : null}
 
-      <section className="mt-16">
-        <h2 className="font-mono text-xs uppercase tracking-widest text-muted">
-          Impact
-        </h2>
+      <section id="impact" className="scroll-mt-28">
+        <SectionLabel>Impact</SectionLabel>
         <div className="mt-8 space-y-px border border-border bg-border">
+          <div className="hidden bg-background px-6 py-4 font-mono text-xs uppercase tracking-wider text-muted md:grid md:grid-cols-[1fr_auto_auto_auto] md:gap-4">
+            <span>Metric</span>
+            <span className="w-24 text-right">Before</span>
+            <span className="w-24 text-right">After</span>
+            <span className="w-24 text-right">Change</span>
+          </div>
           {study.results.map((result) => (
             <div
               key={result.label}
-              className="grid grid-cols-4 gap-4 bg-background px-6 py-5 text-sm md:grid-cols-[1fr_auto_auto_auto]"
+              className="bg-background px-6 py-5 text-sm md:grid md:grid-cols-[1fr_auto_auto_auto] md:items-center md:gap-4"
             >
-              <span className="text-foreground">{result.label}</span>
-              <span className="font-mono text-xs text-muted">{result.before}</span>
-              <span className="font-mono text-xs text-foreground">{result.after}</span>
-              <span className="font-mono text-xs text-muted">{result.change}</span>
+              <span className="font-medium text-foreground">{result.label}</span>
+              <span className="mt-2 block font-mono text-xs text-muted md:mt-0 md:w-24 md:text-right">
+                <span className="mr-2 md:hidden">Before</span>
+                {result.before}
+              </span>
+              <span className="block font-mono text-xs text-foreground md:w-24 md:text-right">
+                <span className="mr-2 md:hidden">After</span>
+                {result.after}
+              </span>
+              <span className="block font-mono text-xs text-muted md:w-24 md:text-right">
+                <span className="mr-2 md:hidden">Change</span>
+                {result.change}
+              </span>
             </div>
           ))}
         </div>
       </section>
 
-      <section className="mt-16">
-        <h2 className="font-mono text-xs uppercase tracking-widest text-muted">
-          Stack
-        </h2>
+      <section id="stack" className="scroll-mt-28">
+        <SectionLabel>Stack</SectionLabel>
         <div className="mt-6 flex flex-wrap gap-2">
           {study.tools.map((tool) => (
             <span
@@ -311,16 +304,14 @@ export default async function CaseStudyPage({ params }: PageProps) {
       </section>
 
       {related.length > 0 ? (
-        <section className="mt-20 border-t border-border pt-12">
-          <h2 className="font-mono text-xs uppercase tracking-widest text-muted">
-            More work
-          </h2>
+        <section className="border-t border-border pt-12">
+          <SectionLabel>More work</SectionLabel>
           <div className="mt-6 space-y-4">
             {related.map((item) => (
               <Link
                 key={item.slug}
                 href={`/work/${item.slug}`}
-                className="block text-sm text-muted hover:text-foreground"
+                className="block text-base text-prose hover:text-foreground"
               >
                 {item.title}
               </Link>
@@ -328,6 +319,50 @@ export default async function CaseStudyPage({ params }: PageProps) {
           </div>
         </section>
       ) : null}
-    </article>
+    </>
+  );
+}
+
+export default async function CaseStudyPage({ params }: PageProps) {
+  const { slug } = await params;
+  const study = getCaseStudyBySlug(slug);
+  if (!study) notFound();
+
+  const related = getAllCaseStudies()
+    .filter((s) => s.slug !== study.slug && s.featured)
+    .slice(0, 3);
+
+  const isDeepStudy =
+    Boolean(study.channelExecution?.length) ||
+    Boolean(study.operationsPrograms?.length);
+
+  return (
+    <>
+      <JsonLd
+        type="caseStudy"
+        caseStudy={{
+          title: study.title,
+          description: study.summary,
+          url: `https://your-domain.com/work/${study.slug}`,
+        }}
+      />
+
+      {isDeepStudy ? (
+        <CaseStudyLayout
+          navItems={buildNavItems(study)}
+          header={<CaseStudyHeader study={study} />}
+        >
+          <CaseStudySections study={study} related={related} />
+        </CaseStudyLayout>
+      ) : (
+        <article className="mx-auto max-w-3xl px-6 pb-24 pt-32">
+          <CaseStudyHeader study={study} />
+          <SimpleCoverGallery study={study} />
+          <div className="mt-16 space-y-16">
+            <CaseStudySections study={study} related={related} />
+          </div>
+        </article>
+      )}
+    </>
   );
 }

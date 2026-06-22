@@ -1,12 +1,11 @@
+import { SectionLabel } from "@/components/ui/SectionLabel";
 import { siteConfig } from "@/lib/site";
 
 export function ExperienceTimeline() {
   return (
     <section className="border-t border-border py-24">
       <div className="mx-auto max-w-5xl px-6">
-        <p className="font-mono text-xs uppercase tracking-widest text-muted">
-          Experience
-        </p>
+        <SectionLabel>Experience</SectionLabel>
         <h2 className="mt-3 font-heading text-3xl font-semibold tracking-tight text-foreground">
           Career
         </h2>
@@ -27,11 +26,11 @@ export function ExperienceTimeline() {
                   {role.scope}
                 </p>
               </div>
-              <ul className="space-y-3">
+              <ul className="prose-list space-y-3">
                 {role.highlights.map((highlight) => (
                   <li
                     key={highlight}
-                    className="text-sm leading-relaxed text-muted"
+                    className="text-base leading-relaxed text-prose"
                   >
                     {highlight}
                   </li>

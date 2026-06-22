@@ -1,20 +1,21 @@
 import Link from "next/link";
 
+import { SectionLabel } from "@/components/ui/SectionLabel";
 import { siteConfig } from "@/lib/site";
 
 export function ExecutiveHero() {
   return (
     <section className="mx-auto max-w-5xl px-6 pb-24 pt-32">
-      <p className="font-mono text-xs uppercase tracking-widest text-muted">
+      <SectionLabel>
         {siteConfig.title} · {siteConfig.location}
-      </p>
+      </SectionLabel>
       <h1 className="mt-6 font-heading text-5xl font-semibold tracking-tight text-foreground md:text-7xl">
         {siteConfig.name.split(" ")[0]}
       </h1>
-      <p className="mt-8 max-w-2xl text-lg leading-relaxed text-muted md:text-xl">
+      <p className="prose prose-lg mt-8 max-w-2xl text-prose md:text-xl">
         {siteConfig.tagline}
       </p>
-      <p className="mt-4 max-w-2xl text-base leading-relaxed text-accent-muted">
+      <p className="prose mt-4 max-w-2xl text-prose">
         {siteConfig.elevatorPitch}
       </p>
 

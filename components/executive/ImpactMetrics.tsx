@@ -1,12 +1,11 @@
+import { SectionLabel } from "@/components/ui/SectionLabel";
 import { siteConfig } from "@/lib/site";
 
 export function ImpactMetrics() {
   return (
     <section className="border-t border-border py-24">
       <div className="mx-auto max-w-5xl px-6">
-        <p className="font-mono text-xs uppercase tracking-widest text-muted">
-          Impact
-        </p>
+        <SectionLabel>Impact</SectionLabel>
         <h2 className="mt-3 font-heading text-3xl font-semibold tracking-tight text-foreground">
           Measurable outcomes
         </h2>

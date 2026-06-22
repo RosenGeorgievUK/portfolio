@@ -10,13 +10,13 @@ import { siteConfig } from "@/lib/site";
 import "./globals.css";
 
 const geist = Geist({
-  variable: "--font-heading",
+  variable: "--font-sans",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
 
 const geistMono = Geist_Mono({
-  variable: "--font-body",
+  variable: "--font-mono",
   subsets: ["latin"],
   weight: ["400", "500"],
 });
@@ -41,7 +41,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${geist.variable} ${geistMono.variable} h-full`}>
+    <html lang="en" className={`${geist.variable} ${geistMono.variable} h-full scroll-smooth`}>
       <body className="flex min-h-full flex-col antialiased">
         <JsonLd type="person" />
         <Header />

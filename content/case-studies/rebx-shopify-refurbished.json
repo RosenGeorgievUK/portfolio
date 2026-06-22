@@ -5,13 +5,18 @@
   "industry": "Consumer Electronics — UK Refurbished",
   "role": "E-commerce Manager",
   "timeline": "Ongoing",
-  "summary": "Owned RebX end-to-end across DTC and marketplaces — Shopify, eBay (190K+ sold), Back Market (4.4★), and Temu — plus custom eBay returns infrastructure (API + OCR dashboard) bridging processing and customer service.",
+  "summary": "Owned multi-channel refurbished commerce across Shopify, eBay, Back Market, and Temu. Built the eBay returns ops bridge — API sync, OCR intake, unified dashboard — connecting warehouse processing and customer service.",
+  "cardSummary": "Multi-channel refurbished commerce across Shopify, eBay, Back Market, and Temu — plus eBay returns ops infrastructure.",
   "challenge": "Refurbished tech requires trust at every touchpoint. At eBay volume, returns also broke operationally — processing, customer service, and Seller Hub lived in separate tools with no shared context. RebX needed one commerce operating model and one returns resolution layer across channels.",
-  "strategy": "Ran a four-tier sales architecture while championing internal systems for high-volume eBay returns: eBay API ingestion into a custom dashboard, OCR scanning at warehouse intake, and a shared workflow so processing and CS resolve the same case with the same evidence.",
+  "challengeParagraphs": [
+    "Refurbished tech requires trust at every touchpoint — consistent grading, warranty, and condition signals across every channel where RebX sells.",
+    "At eBay volume, returns broke operationally. Processing, customer service, and Seller Hub lived in separate tools with no shared context. RebX needed one commerce operating model and one returns resolution layer."
+  ],
+  "strategy": "Ran a four-tier sales architecture — DTC anchor, volume marketplaces, refurb-native, and discovery — with channel-specific trust and pricing rules. Internal systems work focused on the highest-friction bottleneck: eBay returns at scale.",
   "implementation": [
     "Built RebX Certified Refurbished standard — 90-point quality check, four cosmetic grades, 12-month warranty — applied across all channels",
     "Deployed trade-in valuation flow as the inventory flywheel feeding Shopify, eBay, Back Market, and Temu catalogues",
-    "Championed custom eBay returns platform — API sync, OCR intake scanning, unified dashboard for processing and CS",
+    "Championed internal returns platform for high-volume eBay (detailed in Systems & operations)",
     "Established channel-tier pricing and listing rules to protect margin on discovery channels while maximising reach on eBay and Back Market",
     "Unified PDP trust architecture: grading guides, warranty terms, and condition labels adapted per platform"
   ],
@@ -60,8 +65,7 @@
       "tier": "Volume reach · rebxshop",
       "highlights": [
         "Custom eBay Store — 'Refurbished. Reimagined.' branding",
-        "9,000+ active listings · 190K+ items sold · 99.6% feedback",
-        "Custom returns ops — eBay API dashboard + OCR intake bridging processing and CS"
+        "9,000+ active listings · 190K+ items sold · 99.6% feedback"
       ],
       "metric": { "label": "Items sold", "value": "190K+" },
       "screenshots": [

@@ -3,6 +3,8 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
 import { ChannelBadge } from "@/components/ui/ChannelBadge";
+import { SectionLabel } from "@/components/ui/SectionLabel";
+import { getCaseStudyCardSummary } from "@/lib/case-study-display";
 import { getFeaturedCaseStudies } from "@/lib/case-studies";
 
 export function SelectedWork() {
@@ -13,9 +15,7 @@ export function SelectedWork() {
       <div className="mx-auto max-w-5xl px-6">
         <div className="mb-16 flex items-end justify-between">
           <div>
-            <p className="font-mono text-xs uppercase tracking-widest text-muted">
-              Selected work
-            </p>
+            <SectionLabel>Selected work</SectionLabel>
             <h2 className="mt-3 font-heading text-3xl font-semibold tracking-tight text-foreground">
               Verified programmes
             </h2>
@@ -44,8 +44,8 @@ export function SelectedWork() {
                   <h3 className="font-heading text-xl font-medium text-foreground group-hover:text-muted md:text-2xl">
                     {study.title}
                   </h3>
-                  <p className="mt-3 max-w-xl text-sm leading-relaxed text-muted">
-                    {study.summary}
+                  <p className="mt-3 line-clamp-3 max-w-xl text-base leading-relaxed text-prose">
+                    {getCaseStudyCardSummary(study)}
                   </p>
                   <div className="mt-4 flex flex-wrap gap-2">
                     {study.channels.map((channel) => (

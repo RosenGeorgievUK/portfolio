@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { ExperienceTimeline } from "@/components/executive/ExperienceTimeline";
 import { ExpertiseDomains } from "@/components/executive/ExpertiseDomains";
+import { SectionLabel } from "@/components/ui/SectionLabel";
 import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -14,7 +15,7 @@ export default function AboutPage() {
   return (
     <>
       <section className="mx-auto max-w-3xl px-6 pb-16 pt-32">
-        <p className="font-mono text-xs uppercase tracking-widest text-muted">About</p>
+        <SectionLabel>About</SectionLabel>
         <h1 className="mt-3 font-heading text-4xl font-semibold tracking-tight text-foreground">
           {siteConfig.name}
         </h1>
@@ -22,7 +23,7 @@ export default function AboutPage() {
           {siteConfig.title} · {siteConfig.location}
         </p>
 
-        <div className="mt-12 space-y-6 text-base leading-relaxed text-muted">
+        <div className="prose mt-12 space-y-6 text-prose">
           {siteConfig.aboutNarrative.map((p) => (
             <p key={p.slice(0, 40)}>{p}</p>
           ))}

@@ -60,7 +60,9 @@ export type CaseStudy = {
   role: string;
   timeline: string;
   summary: string;
+  cardSummary?: string;
   challenge: string;
+  challengeParagraphs?: string[];
   strategy: string;
   implementation: string[];
   channelExecution?: ChannelExecution[];
