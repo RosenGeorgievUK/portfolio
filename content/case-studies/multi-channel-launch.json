@@ -50,7 +50,12 @@
     "Microsoft Excel"
   ],
   "featured": false,
-  "coverImage": "/images/case-studies/multi-channel.jpg",
+  "coverScreenshot": {
+    "status": "needed",
+    "caption": "Unified multi-channel P&L dashboard",
+    "capture": "Looker Studio or spreadsheet dashboard showing revenue split across Amazon, eBay, OnBuy, and Temu — highlight de-risking Amazon concentration (78% → 58% share).",
+    "filename": "multi-channel-dashboard.png"
+  },
   "headlineMetrics": [
     { "label": "Total GMV", "value": "+50%" },
     { "label": "eBay Growth", "value": "+72%" },

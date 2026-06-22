@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
@@ -7,6 +6,7 @@ import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { CaseStudyLayout } from "@/components/case-studies/CaseStudyLayout";
 import { ChannelEvidence } from "@/components/case-studies/ChannelEvidence";
 import type { CaseStudyNavItem } from "@/components/case-studies/CaseStudyNav";
+import { ScreenshotFrame } from "@/components/case-studies/ScreenshotFrame";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { ChannelBadge } from "@/components/ui/ChannelBadge";
 import { Prose } from "@/components/ui/Prose";
@@ -17,6 +17,12 @@ import {
   getCaseStudyBySlug,
   getCaseStudySlugs,
 } from "@/lib/case-studies";
+import {
+  collectCaseStudyScreenshots,
+  getCoverScreenshot,
+  getGalleryScreenshots,
+  isScreenshotNeeded,
+} from "@/lib/screenshots";
 import type { CaseStudy } from "@/lib/types";
 
 type PageProps = { params: Promise<{ slug: string }> };
@@ -132,41 +138,26 @@ function CaseStudyHeader({ study }: { study: CaseStudy }) {
 function SimpleCoverGallery({ study }: { study: CaseStudy }) {
   if (study.channelExecution?.length) return null;
 
-  return (
-    <>
-      {study.coverImage ? (
-        <div className="mt-12 overflow-hidden border border-border">
-          <div className="relative aspect-[16/9] w-full">
-            <Image
-              src={study.coverImage}
-              alt={`${study.title} — project screenshot`}
-              fill
-              className="object-cover object-top"
-              sizes="(max-width: 768px) 100vw, 768px"
-              priority
-            />
-          </div>
-        </div>
-      ) : null}
+  const cover = getCoverScreenshot(study);
+  const gallery = getGalleryScreenshots(study).filter(
+    (shot) => !shot.src || shot.src !== cover.src,
+  );
 
-      {study.galleryImages && study.galleryImages.length > 1 ? (
-        <div className="mt-8 grid gap-4 sm:grid-cols-2">
-          {study.galleryImages.slice(1).map((image) => (
-            <div key={image} className="overflow-hidden border border-border">
-              <div className="relative aspect-[16/9] w-full">
-                <Image
-                  src={image}
-                  alt={`${study.title} — additional screenshot`}
-                  fill
-                  className="object-cover object-top"
-                  sizes="(max-width: 768px) 100vw, 384px"
-                />
-              </div>
-            </div>
+  return (
+    <div className="mt-12 space-y-8">
+      <ScreenshotFrame asset={cover} priority sizes="(max-width: 768px) 100vw, 768px" />
+      {gallery.length > 0 ? (
+        <div className="grid gap-4 sm:grid-cols-2">
+          {gallery.map((shot) => (
+            <ScreenshotFrame
+              key={shot.filename}
+              asset={shot}
+              sizes="(max-width: 768px) 100vw, 384px"
+            />
           ))}
         </div>
       ) : null}
-    </>
+    </div>
   );
 }
 
@@ -251,6 +242,22 @@ function CaseStudySections({
                     </li>
                   ))}
                 </ul>
+
+                {program.screenshots && program.screenshots.length > 0 ? (
+                  <div className="mt-8 space-y-6">
+                    {program.screenshots.map((shot, index) => (
+                      <ScreenshotFrame
+                        key={`${shot.filename}-${index}`}
+                        asset={{
+                          ...shot,
+                          slot:
+                            shot.slot ??
+                            `Systems · ${program.title}${index > 0 ? ` · ${index + 1}` : ""}`,
+                        }}
+                      />
+                    ))}
+                  </div>
+                ) : null}
               </div>
             ))}
           </div>
@@ -336,6 +343,10 @@ export default async function CaseStudyPage({ params }: PageProps) {
     Boolean(study.channelExecution?.length) ||
     Boolean(study.operationsPrograms?.length);
 
+  const neededScreenshots = collectCaseStudyScreenshots(study).filter(
+    isScreenshotNeeded,
+  ).length;
+
   return (
     <>
       <JsonLd
@@ -350,13 +361,40 @@ export default async function CaseStudyPage({ params }: PageProps) {
       {isDeepStudy ? (
         <CaseStudyLayout
           navItems={buildNavItems(study)}
-          header={<CaseStudyHeader study={study} />}
+          header={
+            <>
+              <CaseStudyHeader study={study} />
+              {neededScreenshots > 0 ? (
+                <p className="mt-8 font-mono text-xs text-muted">
+                  {neededScreenshots} screenshot{neededScreenshots > 1 ? "s" : ""} still
+                  needed —{" "}
+                  <Link
+                    href="/work/screenshot-briefs"
+                    className="text-foreground underline underline-offset-4 hover:text-prose"
+                  >
+                    view capture checklist
+                  </Link>
+                </p>
+              ) : null}
+            </>
+          }
         >
           <CaseStudySections study={study} related={related} />
         </CaseStudyLayout>
       ) : (
         <article className="mx-auto max-w-3xl px-6 pb-24 pt-32">
           <CaseStudyHeader study={study} />
+          {neededScreenshots > 0 ? (
+            <p className="mt-8 font-mono text-xs text-muted">
+              {neededScreenshots} screenshot{neededScreenshots > 1 ? "s" : ""} still needed —{" "}
+              <Link
+                href="/work/screenshot-briefs"
+                className="text-foreground underline underline-offset-4 hover:text-prose"
+              >
+                view capture checklist
+              </Link>
+            </p>
+          ) : null}
           <SimpleCoverGallery study={study} />
           <div className="mt-16 space-y-16">
             <CaseStudySections study={study} related={related} />

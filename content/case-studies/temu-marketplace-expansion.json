@@ -49,7 +49,12 @@
     "eBay Seller Hub"
   ],
   "featured": false,
-  "coverImage": "/images/case-studies/temu.jpg",
+  "coverScreenshot": {
+    "status": "needed",
+    "caption": "Temu Seller Center catalogue & margin dashboard",
+    "capture": "Temu Seller Center — live SKU count (~95), repricing floor settings, and weekly P&L or margin summary from Looker Studio if available.",
+    "filename": "temu-expansion-catalogue.png"
+  },
   "headlineMetrics": [
     { "label": "SKUs Listed", "value": "95" },
     { "label": "Monthly Rev", "value": "£28K" },

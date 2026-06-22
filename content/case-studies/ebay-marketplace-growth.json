@@ -49,7 +49,12 @@
     "Looker Studio"
   ],
   "featured": false,
-  "coverImage": "/images/case-studies/ebay.jpg",
+  "coverScreenshot": {
+    "status": "needed",
+    "caption": "eBay Store & Promoted Listings performance",
+    "capture": "ebay.co.uk store or Seller Hub summary — listing impressions uplift, Promoted Listings ROAS (~4.2x), and seller defect rate. Include refreshed listing grid if available.",
+    "filename": "ebay-growth-storefront.png"
+  },
   "headlineMetrics": [
     { "label": "Revenue Growth", "value": "+72%" },
     { "label": "ROAS", "value": "4.2x" },

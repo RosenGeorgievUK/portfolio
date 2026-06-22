@@ -31,10 +31,16 @@ export type CaseStudyResult = {
   change: string;
 };
 
-export type ChannelScreenshot = {
-  src: string;
+export type ScreenshotAsset = {
+  src?: string;
   caption: string;
+  capture: string;
+  filename: string;
+  status: "ready" | "needed";
+  slot?: string;
 };
+
+export type ChannelScreenshot = ScreenshotAsset;
 
 export type ChannelExecution = {
   channel: Channel;
@@ -50,6 +56,7 @@ export type OperationsProgram = {
   problem: string;
   approach: string;
   highlights: string[];
+  screenshots?: ScreenshotAsset[];
 };
 
 export type CaseStudy = {
@@ -70,8 +77,10 @@ export type CaseStudy = {
   results: CaseStudyResult[];
   tools: string[];
   featured: boolean;
-  coverImage: string;
+  coverImage?: string;
+  coverScreenshot?: ScreenshotAsset;
   galleryImages?: string[];
+  galleryScreenshots?: ScreenshotAsset[];
   projectUrl?: string;
   projectLinks?: { label: string; url: string }[];
   headlineMetrics: {

@@ -1,11 +1,12 @@
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
+import { ScreenshotFrame } from "@/components/case-studies/ScreenshotFrame";
 import { ChannelBadge } from "@/components/ui/ChannelBadge";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { getCaseStudyCardSummary } from "@/lib/case-study-display";
 import { getFeaturedCaseStudies } from "@/lib/case-studies";
+import { getCoverScreenshot } from "@/lib/screenshots";
 
 export function SelectedWork() {
   const studies = getFeaturedCaseStudies().slice(0, 3);
@@ -53,17 +54,11 @@ export function SelectedWork() {
                     ))}
                   </div>
                 </div>
-                {study.coverImage ? (
-                  <div className="relative hidden h-24 w-40 shrink-0 overflow-hidden border border-border md:block">
-                    <Image
-                      src={study.coverImage}
-                      alt={`${study.title} screenshot`}
-                      fill
-                      className="object-cover object-top transition-transform duration-300 group-hover:scale-105"
-                      sizes="160px"
-                    />
-                  </div>
-                ) : null}
+                <ScreenshotFrame
+                  asset={getCoverScreenshot(study)}
+                  variant="thumb"
+                  className="hidden h-24 w-40 md:flex"
+                />
               </div>
               <div className="flex shrink-0 gap-8 pl-12 md:pl-0">
                 {study.headlineMetrics.map((metric) => (

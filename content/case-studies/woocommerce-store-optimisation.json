@@ -51,7 +51,12 @@
     "Klaviyo"
   ],
   "featured": false,
-  "coverImage": "/images/case-studies/woocommerce.jpg",
+  "coverScreenshot": {
+    "status": "needed",
+    "caption": "WooCommerce storefront & Lighthouse performance",
+    "capture": "Rebuilt WooCommerce homepage on mobile width plus PageSpeed/Lighthouse score (~92 mobile) or GTmetrix result. Include PDP with trust badges if possible.",
+    "filename": "woocommerce-storefront.png"
+  },
   "headlineMetrics": [
     { "label": "CVR Lift", "value": "+67%" },
     { "label": "Page Speed", "value": "92/100" },

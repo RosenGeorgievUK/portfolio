@@ -1,8 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import { useState } from "react";
 
+import { ScreenshotFrame } from "@/components/case-studies/ScreenshotFrame";
 import { ChannelBadge } from "@/components/ui/ChannelBadge";
 import type { ChannelExecution } from "@/lib/types";
 
@@ -47,43 +47,26 @@ function ChannelBlock({ block }: { block: ChannelExecution }) {
 
       <div className="mt-6 space-y-6">
         {primaryShot ? (
-          <figure className="overflow-hidden border border-border">
-            <div className="relative aspect-[16/9] w-full">
-              <Image
-                src={primaryShot.src}
-                alt={primaryShot.caption}
-                fill
-                className="object-cover object-top"
-                sizes="(max-width: 1024px) 100vw, 768px"
-                priority
-              />
-            </div>
-            <figcaption className="border-t border-border px-6 py-4 font-mono text-xs text-muted">
-              {primaryShot.caption}
-            </figcaption>
-          </figure>
+          <ScreenshotFrame
+            asset={{
+              ...primaryShot,
+              slot: primaryShot.slot ?? `Channel · ${block.channel}`,
+            }}
+            priority
+          />
         ) : null}
 
-        {hasExtra && expanded ? (
-          <>
-            {extraShots.map((shot) => (
-              <figure key={shot.src} className="overflow-hidden border border-border">
-                <div className="relative aspect-[16/9] w-full">
-                  <Image
-                    src={shot.src}
-                    alt={shot.caption}
-                    fill
-                    className="object-cover object-top"
-                    sizes="(max-width: 1024px) 100vw, 768px"
-                  />
-                </div>
-                <figcaption className="border-t border-border px-6 py-4 font-mono text-xs text-muted">
-                  {shot.caption}
-                </figcaption>
-              </figure>
-            ))}
-          </>
-        ) : null}
+        {hasExtra && expanded
+          ? extraShots.map((shot, index) => (
+              <ScreenshotFrame
+                key={`${shot.filename}-${index}`}
+                asset={{
+                  ...shot,
+                  slot: shot.slot ?? `Channel · ${block.channel} · ${index + 2}`,
+                }}
+              />
+            ))
+          : null}
 
         {hasExtra ? (
           <button

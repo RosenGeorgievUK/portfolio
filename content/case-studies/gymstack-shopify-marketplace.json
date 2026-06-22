@@ -52,6 +52,22 @@
   ],
   "featured": true,
   "coverImage": "/images/case-studies/gymstack-home.png",
+  "galleryScreenshots": [
+    {
+      "src": "/images/case-studies/gymstack-home.png",
+      "status": "ready",
+      "caption": "Homepage — category pills, best sellers, and promotional hero",
+      "capture": "gymstack.uk homepage — category pill navigation, best-seller modules, and active campaign hero above the fold.",
+      "filename": "gymstack-home.png"
+    },
+    {
+      "src": "/images/case-studies/gymstack-blog.png",
+      "status": "ready",
+      "caption": "Evidence-based blog hub with topic filters",
+      "capture": "Blog index — topic filters (collagen, vitamin D, electrolytes, etc.) and article cards visible.",
+      "filename": "gymstack-blog.png"
+    }
+  ],
   "galleryImages": [
     "/images/case-studies/gymstack-home.png",
     "/images/case-studies/gymstack-blog.png"

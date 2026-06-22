@@ -32,6 +32,20 @@
         "Unified case view links API return data with physical scan evidence — processing status visible to CS in real time",
         "Customer service resolves buyer queries and partial-refund decisions without leaving the dashboard or re-asking warehouse",
         "Processing team flags grading discrepancies and damage with scanned proof attached to the same eBay return ID"
+      ],
+      "screenshots": [
+        {
+          "status": "needed",
+          "caption": "Returns dashboard — unified case view",
+          "capture": "Full-width capture of the custom returns dashboard: open eBay return ID, API-synced buyer reason and tracking, OCR-captured serial/IMEI, processing grade/status, and CS action controls. Redact buyer name, address, and any PII.",
+          "filename": "rebx-returns-dashboard.png"
+        },
+        {
+          "status": "needed",
+          "caption": "Warehouse OCR intake linked to return case",
+          "capture": "Processing station screen after scanning a return label or device serial — show the confirmation that intake evidence is attached to the matching eBay return case ID.",
+          "filename": "rebx-returns-ocr-intake.png"
+        }
       ]
     }
   ],
@@ -48,15 +62,24 @@
       "screenshots": [
         {
           "src": "/images/case-studies/rebx-home.png",
-          "caption": "Shopify homepage — hero, category grid, and trust architecture"
+          "status": "ready",
+          "caption": "Shopify homepage — hero, category grid, and trust architecture",
+          "capture": "rebx.co.uk homepage — capture hero, trust bar (delivery, warranty, returns), and category grid above the fold.",
+          "filename": "rebx-home.png"
         },
         {
           "src": "/images/case-studies/rebx-grading.png",
-          "caption": "Interactive grading guide with 3D device viewer"
+          "status": "ready",
+          "caption": "Interactive grading guide with 3D device viewer",
+          "capture": "Grading guide page — show the cosmetic grade explainer and 3D device viewer if visible.",
+          "filename": "rebx-grading.png"
         },
         {
           "src": "/images/case-studies/rebx-trade-in.png",
-          "caption": "Trade-in valuation flow — inventory flywheel"
+          "status": "ready",
+          "caption": "Trade-in valuation flow — inventory flywheel",
+          "capture": "Trade-in valuation step — device selection and estimated offer value visible.",
+          "filename": "rebx-trade-in.png"
         }
       ]
     },
@@ -71,11 +94,17 @@
       "screenshots": [
         {
           "src": "/images/case-studies/rebx-ebay-store.png",
-          "caption": "eBay Store — custom branding, 190K sold, 7.6K followers"
+          "status": "ready",
+          "caption": "eBay Store — custom branding, 190K sold, 7.6K followers",
+          "capture": "ebay.co.uk/str/rebxshop store header — items sold count, feedback score, and custom store branding visible.",
+          "filename": "rebx-ebay-store.png"
         },
         {
           "src": "/images/case-studies/rebx-ebay-listings.png",
-          "caption": "Promotional modules and discounted product grid"
+          "status": "ready",
+          "caption": "Promotional modules and discounted product grid",
+          "capture": "eBay store product grid — promotional banners and listing cards with pricing.",
+          "filename": "rebx-ebay-listings.png"
         }
       ]
     },
@@ -91,11 +120,17 @@
       "screenshots": [
         {
           "src": "/images/case-studies/rebx-backmarket-reviews.png",
-          "caption": "Back Market seller profile — 4.4/5 rating, 4 years trusted"
+          "status": "ready",
+          "caption": "Back Market seller profile — 4.4/5 rating, 4 years trusted",
+          "capture": "Back Market Rebx seller page — overall rating, tenure, and category sub-scores.",
+          "filename": "rebx-backmarket-reviews.png"
         },
         {
           "src": "/images/case-studies/rebx-backmarket-items.png",
-          "caption": "88-product catalogue — iPhone, Apple Watch, Switch Lite, Galaxy Buds"
+          "status": "ready",
+          "caption": "88-product catalogue — iPhone, Apple Watch, Switch Lite, Galaxy Buds",
+          "capture": "Back Market seller catalogue grid — product mix and condition grades visible.",
+          "filename": "rebx-backmarket-items.png"
         }
       ]
     },
@@ -111,11 +146,17 @@
       "screenshots": [
         {
           "src": "/images/case-studies/rebx-temu-store.png",
-          "caption": "Temu mall — 82 items, 135 sold, local warehouse delivery"
+          "status": "ready",
+          "caption": "Temu mall — 82 items, 135 sold, local warehouse delivery",
+          "capture": "Temu RebX mall header — item count, store rating, and local warehouse badge.",
+          "filename": "rebx-temu-store.png"
         },
         {
           "src": "/images/case-studies/rebx-temu-products.png",
-          "caption": "Product grid — Apple Watch, Sony, PS4 Pro with condition labels"
+          "status": "ready",
+          "caption": "Product grid — Apple Watch, Sony, PS4 Pro with condition labels",
+          "capture": "Temu product grid — condition labels and representative SKU mix.",
+          "filename": "rebx-temu-products.png"
         }
       ]
     }

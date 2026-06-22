@@ -49,7 +49,12 @@
     "Google Tag Manager"
   ],
   "featured": false,
-  "coverImage": "/images/case-studies/tiktok.jpg",
+  "coverScreenshot": {
+    "status": "needed",
+    "caption": "TikTok Shop storefront & creator commerce",
+    "capture": "TikTok Shop seller view — hero SKUs live, shop conversion metrics (~2.1% CVR), and creator/affiliate programme summary or LIVE commerce event screenshot.",
+    "filename": "tiktok-shop-storefront.png"
+  },
   "headlineMetrics": [
     { "label": "TikTok CVR", "value": "2.1%" },
     { "label": "Monthly Revenue", "value": "£42K" },

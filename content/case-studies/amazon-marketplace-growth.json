@@ -49,7 +49,12 @@
     "Looker Studio"
   ],
   "featured": false,
-  "coverImage": "/images/case-studies/amazon.jpg",
+  "coverScreenshot": {
+    "status": "needed",
+    "caption": "Amazon Seller Central & top ASIN performance",
+    "capture": "Two-panel capture or composite: (1) Seller Central dashboard showing account health 98%+ and Buy Box win rate ~94%. (2) Top revenue ASIN on Amazon.co.uk search results with A+ content and Renew badge visible if enrolled.",
+    "filename": "amazon-storefront.png"
+  },
   "headlineMetrics": [
     { "label": "Revenue Growth", "value": "+47%" },
     { "label": "Buy Box Rate", "value": "94%" },

@@ -1,13 +1,14 @@
 "use client";
 
-import Image from "next/image";
 import { useMemo, useState } from "react";
 
+import { ScreenshotFrame } from "@/components/case-studies/ScreenshotFrame";
 import { ChannelBadge } from "@/components/ui/ChannelBadge";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { getCaseStudyCardSummary } from "@/lib/case-study-display";
 import { channelLabels } from "@/lib/channels";
 import { getAllCaseStudies } from "@/lib/case-studies";
+import { getCoverScreenshot, getTotalNeededScreenshotCount } from "@/lib/screenshots";
 import { PRIMARY_CHANNELS, type Channel } from "@/lib/types";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
@@ -31,6 +32,18 @@ export function WorkIndex() {
       <p className="prose mt-6 max-w-xl text-prose">
         Revenue programmes across Amazon, TikTok Shop, eBay, Shopify, WooCommerce, and Temu.
       </p>
+
+      {getTotalNeededScreenshotCount() > 0 ? (
+        <p className="mt-4 font-mono text-xs text-muted">
+          {getTotalNeededScreenshotCount()} screenshots to capture —{" "}
+          <Link
+            href="/work/screenshot-briefs"
+            className="text-foreground underline underline-offset-4 hover:text-prose"
+          >
+            open checklist
+          </Link>
+        </p>
+      ) : null}
 
       <div className="mt-12 flex flex-wrap gap-2">
         <button
@@ -73,17 +86,7 @@ export function WorkIndex() {
               <span className="font-mono text-sm text-accent-muted">
                 {String(index + 1).padStart(2, "0")}
               </span>
-              {study.coverImage ? (
-                <div className="relative hidden h-16 w-28 shrink-0 overflow-hidden border border-border sm:block">
-                  <Image
-                    src={study.coverImage}
-                    alt={`${study.title} screenshot`}
-                    fill
-                    className="object-cover object-top"
-                    sizes="112px"
-                  />
-                </div>
-              ) : null}
+              <ScreenshotFrame asset={getCoverScreenshot(study)} variant="thumb" className="hidden sm:block" />
               <div className="min-w-0">
                 <h2 className="font-heading text-lg font-medium text-foreground group-hover:text-muted md:text-xl">
                   {study.title}
