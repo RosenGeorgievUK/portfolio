@@ -1,50 +1,95 @@
 {
   "slug": "rebx-shopify-refurbished",
-  "title": "REBX: Multi-Channel Refurbished Commerce",
-  "channels": ["shopify", "ebay", "backmarket", "temu"],
+  "title": "REBX: Commerce Systems & Multi-Channel Ops",
+  "channels": ["shopify", "ebay", "backmarket", "temu", "tiktok"],
   "industry": "Consumer Electronics — UK Refurbished",
-  "role": "E-commerce Manager",
-  "timeline": "Ongoing",
-  "summary": "Owned multi-channel refurbished commerce across Shopify, eBay, Back Market, and Temu. Built the eBay returns ops bridge — API sync, OCR intake, unified dashboard — connecting warehouse processing and customer service.",
-  "cardSummary": "Multi-channel refurbished commerce across Shopify, eBay, Back Market, and Temu — plus eBay returns ops infrastructure.",
-  "challenge": "Refurbished tech requires trust at every touchpoint. At eBay volume, returns also broke operationally — processing, customer service, and Seller Hub lived in separate tools with no shared context. RebX needed one commerce operating model and one returns resolution layer across channels.",
+  "role": "E-Commerce & Marketplace Manager",
+  "timeline": "2022 — Present",
+  "summary": "Built the in-house systems RebX runs on — bulk listing, custom dual-shop Shopify, trade-in platform, Daily Returns Board, and marketplace integrations — while managing Temu, eBay, Back Market, and DTC.",
+  "cardSummary": "12+ in-house systems at RebX — bulk listing, sole-built Shopify, returns ops, trade-in, Temu ~£4K/mo.",
+  "challenge": "RebX scaled refurbished volume faster than off-the-shelf tools could support. Listing, returns, trade-in, and multi-channel catalogue work needed in-house infrastructure — not another agency build or spreadsheet workaround.",
   "challengeParagraphs": [
-    "Refurbished tech requires trust at every touchpoint — consistent grading, warranty, and condition signals across every channel where RebX sells.",
-    "At eBay volume, returns broke operationally. Processing, customer service, and Seller Hub lived in separate tools with no shared context. RebX needed one commerce operating model and one returns resolution layer."
+    "RebX scaled refurbished volume faster than off-the-shelf tools could support. Listing staff could not expand without bulk listing infrastructure; returns needed org-wide SLA enforcement; Shopify needed a dual Refurbished + Bargains architecture built in-house.",
+    "Marketplace channels each had distinct constraints — Temu required 4Seller integration and bulk listing work listing staff would not take on; Amazon Renew needed grade-accurate BaseLinker feeds; eBay returns needed API-linked intake instead of manual transcription between warehouse and CS."
   ],
-  "strategy": "Ran a four-tier sales architecture — DTC anchor, volume marketplaces, refurb-native, and discovery — with channel-specific trust and pricing rules. Internal systems work focused on the highest-friction bottleneck: eBay returns at scale.",
+  "strategy": "Prioritise internal systems that remove operational bottlenecks first — bulk listing, returns board, trade-in — then layer channel integrations (4Seller, BaseLinker, eBay API) so each marketplace can run without misselling grades or manual handoffs.",
   "implementation": [
-    "Built RebX Certified Refurbished standard — 90-point quality check, four cosmetic grades, 12-month warranty — applied across all channels",
-    "Deployed trade-in valuation flow as the inventory flywheel feeding Shopify, eBay, Back Market, and Temu catalogues",
-    "Championed internal returns platform for high-volume eBay (detailed in Systems & operations)",
-    "Established channel-tier pricing and listing rules to protect margin on discovery channels while maximising reach on eBay and Back Market",
-    "Unified PDP trust architecture: grading guides, warranty terms, and condition labels adapted per platform"
+    "Built bulk listing system — listing team depends on it entirely; business scale and hiring more listers impossible without it",
+    "Sole owner of custom Shopify — dual Refurbished + Bargains shops, Liquid/CSS theme, collection architecture, StoreFeeder, payments, ongoing technical management, no agency",
+    "Conceived and built custom trade-in platform in-house — GDPR-compliant, customer data encrypted to industry best practice",
+    "Built Daily Returns Board with SLA enforcement org-wide; Returns Label Scanner in progress — OCR reads labels, eBay Returns API pulls case data, feeds structured tasks with deadlines",
+    "Configured 4Seller for Temu refurbished storefront and personally bulk-listed new-condition items after listing staff declined the channel — ~£4K/month run rate",
+    "Set up TikTok Shop from scratch — £3,500/month in month one with zero ad spend (channel subsequently lost while I was away)",
+    "Configured BaseLinker for Amazon Renew grade-accurate listing — only attempt to make Renew viable without misselling risk",
+    "Built eBay image converter resolving a platform-wide hosting issue IT and eBay could not fix",
+    "Built Back Market trade-in tracker with reporting bridging tech room and management",
+    "Built Jarvis WMS asset checker and SKU image fetcher used daily by listing team",
+    "Marginal VAT calculation tool in progress — pulls cross-channel sales by PO for shareholder/accountant reporting",
+    "Initiated eBay Live setup — intro call with eBay Live manager, host sourcing in progress"
   ],
   "operationsPrograms": [
     {
-      "title": "eBay returns ops bridge",
+      "title": "Bulk listing system",
       "channel": "ebay",
-      "problem": "With 190K+ items sold, eBay returns scaled faster than the manual workflow. Warehouse processing scanned and graded devices in one system; customer service worked cases in Seller Hub with no linked intake evidence. Disputes stalled on back-and-forth between teams.",
-      "approach": "Designed and championed a custom returns programme: eBay API feeds return cases into a central dashboard; OCR scanning at processing captures label, serial, and condition data on intake; CS and warehouse share one case view to close returns and buyer issues faster.",
+      "problem": "Processed stock could not reach marketplaces at the rate the business required. Without bulk listing, hiring more listing staff would not help — the bottleneck made expansion unviable.",
+      "approach": "Built and maintained bulk listing infrastructure the listing team runs on daily. Current RebX listing operations depend on this system entirely.",
       "highlights": [
-        "Integrated eBay Post-Order API — return requests, reasons, tracking, and case status sync into a single dashboard",
-        "OCR scanning at warehouse intake auto-captures return labels, serials/IMEI, and device identifiers against the open case",
-        "Unified case view links API return data with physical scan evidence — processing status visible to CS in real time",
-        "Customer service resolves buyer queries and partial-refund decisions without leaving the dashboard or re-asking warehouse",
-        "Processing team flags grading discrepancies and damage with scanned proof attached to the same eBay return ID"
+        "Core dependency for listing team — none of current listing volume possible without it",
+        "Enables processed stock to be listed at operational scale across channels",
+        "Removing this system would block business growth and new listing headcount"
       ],
       "screenshots": [
         {
           "status": "needed",
-          "caption": "Returns dashboard — unified case view",
-          "capture": "Full-width capture of the custom returns dashboard: open eBay return ID, API-synced buyer reason and tracking, OCR-captured serial/IMEI, processing grade/status, and CS action controls. Redact buyer name, address, and any PII.",
+          "caption": "Bulk listing workflow",
+          "capture": "Screen showing bulk listing interface or output — processed stock moving to live listings at scale. Redact sensitive SKUs or pricing if needed.",
+          "filename": "rebx-bulk-listing.png"
+        }
+      ]
+    },
+    {
+      "title": "Daily Returns Board",
+      "channel": "ebay",
+      "problem": "Returns were transcribed manually between warehouse intake and CS. SLAs were missed; no single view linked physical returns to eBay case data.",
+      "approach": "Built the Daily Returns Board with SLA enforcement used across the organisation. Companion Returns Label Scanner in progress: reads printed return labels, calls eBay Returns API, feeds structured actionable tasks with automatic SLA deadlines.",
+      "highlights": [
+        "Org-wide Daily Returns Board with SLA enforcement — replaces ad-hoc tracking",
+        "Returns Label Scanner eliminates manual transcription from label to case",
+        "eBay Returns API integration pulls buyer reason, tracking, and case status automatically",
+        "Structured tasks with deadlines — no return missed or delayed through handoff gaps"
+      ],
+      "screenshots": [
+        {
+          "status": "needed",
+          "caption": "Daily Returns Board — SLA view",
+          "capture": "Daily Returns Board showing open returns, SLA status, and team assignments. Redact buyer PII.",
           "filename": "rebx-returns-dashboard.png"
         },
         {
           "status": "needed",
-          "caption": "Warehouse OCR intake linked to return case",
-          "capture": "Processing station screen after scanning a return label or device serial — show the confirmation that intake evidence is attached to the matching eBay return case ID.",
+          "caption": "Returns Label Scanner — API intake",
+          "capture": "Label scanner app after reading a return label — show eBay return data pulled via API and task created with SLA deadline.",
           "filename": "rebx-returns-ocr-intake.png"
+        }
+      ]
+    },
+    {
+      "title": "Custom trade-in platform",
+      "channel": "shopify",
+      "problem": "Trade-in was a core inventory flywheel but no off-the-shelf product matched RebX grading, ops, or GDPR requirements.",
+      "approach": "Conceived, built, and delivered entirely in-house with no external development — bespoke to RebX operations with encrypted customer data.",
+      "highlights": [
+        "End-to-end trade-in valuation on rebx.co.uk — feeds refurbished inventory pipeline",
+        "GDPR-compliant with customer data encrypted to industry best practice",
+        "No agency or external developer — sole design and delivery"
+      ],
+      "screenshots": [
+        {
+          "src": "/images/case-studies/rebx-trade-in.png",
+          "status": "ready",
+          "caption": "Trade-in valuation flow on Shopify",
+          "capture": "Trade-in valuation step — device selection and estimated offer value visible.",
+          "filename": "rebx-trade-in.png"
         }
       ]
     }
@@ -52,154 +97,173 @@
   "channelExecution": [
     {
       "channel": "shopify",
-      "tier": "DTC anchor · rebx.co.uk",
+      "tier": "Sole-built DTC · rebx.co.uk",
       "highlights": [
-        "Homepage hero with trust bar — free delivery, 12-month warranty, 30-day returns",
-        "Interactive 3D grading guide and trade-in programme",
-        "Klarna, Clearpay, and Shop Pay on higher-ticket refurbished devices"
+        "Sole owner concept-to-delivery — dual Refurbished + Bargains shops in one cohesive storefront",
+        "Custom Liquid theme, collection architecture, StoreFeeder integration, payments",
+        "Custom trade-in platform built in-house on the same stack"
       ],
-      "metric": { "label": "Warranty", "value": "12 mo" },
+      "metric": { "label": "Ownership", "value": "Sole" },
       "screenshots": [
         {
           "src": "/images/case-studies/rebx-home.png",
           "status": "ready",
-          "caption": "Shopify homepage — hero, category grid, and trust architecture",
-          "capture": "rebx.co.uk homepage — capture hero, trust bar (delivery, warranty, returns), and category grid above the fold.",
+          "caption": "Shopify homepage — dual-shop navigation and trust architecture",
+          "capture": "rebx.co.uk homepage — Refurbished + Bargains structure, hero, trust bar.",
           "filename": "rebx-home.png"
         },
         {
           "src": "/images/case-studies/rebx-grading.png",
           "status": "ready",
           "caption": "Interactive grading guide with 3D device viewer",
-          "capture": "Grading guide page — show the cosmetic grade explainer and 3D device viewer if visible.",
+          "capture": "Grading guide page — cosmetic grade explainer and 3D device viewer.",
           "filename": "rebx-grading.png"
-        },
-        {
-          "src": "/images/case-studies/rebx-trade-in.png",
-          "status": "ready",
-          "caption": "Trade-in valuation flow — inventory flywheel",
-          "capture": "Trade-in valuation step — device selection and estimated offer value visible.",
-          "filename": "rebx-trade-in.png"
         }
       ]
     },
     {
       "channel": "ebay",
-      "tier": "Volume reach · rebxshop",
+      "tier": "Volume · rebxshop + tooling",
       "highlights": [
-        "Custom eBay Store — 'Refurbished. Reimagined.' branding",
-        "9,000+ active listings · 190K+ items sold · 99.6% feedback"
+        "Bulk listing infrastructure powers listing team output at scale",
+        "Custom eBay Store — 9,000+ active listings · 99.6% feedback",
+        "Built eBay image converter — resolved platform-wide image hosting issue"
       ],
-      "metric": { "label": "Items sold", "value": "190K+" },
+      "metric": { "label": "Listings", "value": "9K+" },
       "screenshots": [
         {
           "src": "/images/case-studies/rebx-ebay-store.png",
           "status": "ready",
-          "caption": "eBay Store — custom branding, 190K sold, 7.6K followers",
-          "capture": "ebay.co.uk/str/rebxshop store header — items sold count, feedback score, and custom store branding visible.",
+          "caption": "eBay Store — custom branding and volume metrics",
+          "capture": "ebay.co.uk/str/rebxshop store header — branding and listing volume visible.",
           "filename": "rebx-ebay-store.png"
         },
         {
           "src": "/images/case-studies/rebx-ebay-listings.png",
           "status": "ready",
-          "caption": "Promotional modules and discounted product grid",
-          "capture": "eBay store product grid — promotional banners and listing cards with pricing.",
+          "caption": "Promotional modules and product grid",
+          "capture": "eBay store product grid — promotional banners and listing cards.",
           "filename": "rebx-ebay-listings.png"
         }
       ]
     },
     {
-      "channel": "backmarket",
-      "tier": "Refurb-native marketplace · Rebx seller",
-      "highlights": [
-        "Approved seller — 4.4/5 stars, trusted on Back Market for 4 years",
-        "88-product catalogue across smartphones, watches, audio, and consoles",
-        "Category-rated reviews — Battery 4.6, Shipping 4.6, Lens & Camera 4.7"
-      ],
-      "metric": { "label": "Seller rating", "value": "4.4★" },
-      "screenshots": [
-        {
-          "src": "/images/case-studies/rebx-backmarket-reviews.png",
-          "status": "ready",
-          "caption": "Back Market seller profile — 4.4/5 rating, 4 years trusted",
-          "capture": "Back Market Rebx seller page — overall rating, tenure, and category sub-scores.",
-          "filename": "rebx-backmarket-reviews.png"
-        },
-        {
-          "src": "/images/case-studies/rebx-backmarket-items.png",
-          "status": "ready",
-          "caption": "88-product catalogue — iPhone, Apple Watch, Switch Lite, Galaxy Buds",
-          "capture": "Back Market seller catalogue grid — product mix and condition grades visible.",
-          "filename": "rebx-backmarket-items.png"
-        }
-      ]
-    },
-    {
       "channel": "temu",
-      "tier": "Discovery expansion · RebX mall",
+      "tier": "Refurbished · 4Seller integration",
       "highlights": [
-        "82 margin-positive SKUs with local-warehouse fulfilment",
-        "Apple Watch, Sony audio, PS4 Pro, and smartwatch accessories",
-        "4.5★ store rating with transparent condition grades"
+        "Configured 4Seller integration for refurbished storefront — channel would have stayed inactive without it",
+        "Personally bulk-listed new-condition items after listing staff declined the channel",
+        "Currently ~£4,000/month with room to grow; day-to-day ops shared with wider team"
       ],
-      "metric": { "label": "Store rating", "value": "4.5★" },
+      "metric": { "label": "Run rate", "value": "~£4K/mo" },
       "screenshots": [
         {
           "src": "/images/case-studies/rebx-temu-store.png",
           "status": "ready",
-          "caption": "Temu mall — 82 items, 135 sold, local warehouse delivery",
-          "capture": "Temu RebX mall header — item count, store rating, and local warehouse badge.",
+          "caption": "Temu mall — refurbished storefront",
+          "capture": "Temu RebX mall header — item count and local warehouse delivery.",
           "filename": "rebx-temu-store.png"
         },
         {
           "src": "/images/case-studies/rebx-temu-products.png",
           "status": "ready",
-          "caption": "Product grid — Apple Watch, Sony, PS4 Pro with condition labels",
-          "capture": "Temu product grid — condition labels and representative SKU mix.",
+          "caption": "Product grid with condition labels",
+          "capture": "Temu product grid — condition labels and SKU mix.",
           "filename": "rebx-temu-products.png"
+        }
+      ]
+    },
+    {
+      "channel": "backmarket",
+      "tier": "Refurb-native · Rebx seller",
+      "highlights": [
+        "Built trade-in tracker with reporting — visibility from tech room to management",
+        "4.4★ seller rating · 88-product catalogue",
+        "Replaced opaque handoffs with structured trade-in workflow"
+      ],
+      "metric": { "label": "Rating", "value": "4.4★" },
+      "screenshots": [
+        {
+          "src": "/images/case-studies/rebx-backmarket-reviews.png",
+          "status": "ready",
+          "caption": "Back Market seller profile",
+          "capture": "Back Market Rebx seller page — rating and tenure.",
+          "filename": "rebx-backmarket-reviews.png"
+        },
+        {
+          "src": "/images/case-studies/rebx-backmarket-items.png",
+          "status": "ready",
+          "caption": "Product catalogue grid",
+          "capture": "Back Market seller catalogue — product mix and condition grades.",
+          "filename": "rebx-backmarket-items.png"
+        }
+      ]
+    },
+    {
+      "channel": "tiktok",
+      "tier": "Launch · organic growth",
+      "highlights": [
+        "Set up TikTok Shop from scratch — £3,500/month run rate in month one",
+        "Zero ad spend and no coupons — organic setup and channel optimisation only",
+        "Channel subsequently banned while I was on holiday (no appeal pursued)"
+      ],
+      "metric": { "label": "Month 1", "value": "£3.5K" },
+      "screenshots": [
+        {
+          "status": "needed",
+          "caption": "TikTok Shop seller dashboard — launch period",
+          "capture": "TikTok Seller Center showing early-month revenue or order volume during the £3.5K/month run-rate period. Redact sensitive data.",
+          "filename": "rebx-tiktok-shop.png"
         }
       ]
     }
   ],
   "results": [
     {
-      "label": "Channels live",
-      "before": "1",
-      "after": "4",
-      "change": "Unified ops"
+      "label": "Bulk listing",
+      "before": "Bottleneck",
+      "after": "Core infra",
+      "change": "Team dependency"
     },
     {
-      "label": "eBay items sold",
-      "before": "—",
-      "after": "190K+",
-      "change": "Volume"
+      "label": "Shopify",
+      "before": "Agency brief",
+      "after": "Sole in-house",
+      "change": "Dual-shop live"
     },
     {
-      "label": "Returns workflow",
+      "label": "Temu refurb",
+      "before": "Inactive",
+      "after": "~£4K/mo",
+      "change": "4Seller + bulk"
+    },
+    {
+      "label": "Returns ops",
       "before": "Manual",
-      "after": "API + OCR",
-      "change": "Unified"
+      "after": "SLA board",
+      "change": "API scanner WIP"
     },
     {
-      "label": "CS / processing",
-      "before": "Silos",
-      "after": "1 dashboard",
-      "change": "Bridge"
+      "label": "TikTok Shop",
+      "before": "£0",
+      "after": "£3.5K/mo",
+      "change": "Mo-1 organic"
     }
   ],
   "tools": [
     "Shopify",
+    "Liquid",
+    "StoreFeeder",
+    "BaseLinker",
+    "4Seller",
     "eBay Seller Hub",
     "eBay Post-Order API",
-    "eBay Promoted Listings",
     "Back Market Seller Portal",
     "Temu Seller Center",
-    "OCR intake scanning",
+    "TikTok Seller Center",
+    "Jarvis WMS",
     "Google Analytics 4",
-    "Google Tag Manager",
-    "Klaviyo",
-    "Klarna",
-    "Clearpay"
+    "Klaviyo"
   ],
   "featured": true,
   "coverImage": "/images/case-studies/rebx-home.png",
@@ -210,8 +274,8 @@
     { "label": "Temu mall", "url": "https://www.temu.com/mall.html?mall_id=670702094587285" }
   ],
   "headlineMetrics": [
-    { "label": "Channels", "value": "4" },
-    { "label": "eBay sold", "value": "190K+" },
-    { "label": "Returns ops", "value": "API+OCR" }
+    { "label": "Systems built", "value": "12+" },
+    { "label": "Shopify", "value": "Sole owner" },
+    { "label": "Temu", "value": "~£4K/mo" }
   ]
 }

@@ -21,8 +21,11 @@ export function ExecutiveHero() {
 
       <div className="mt-16 grid grid-cols-2 gap-px border border-border bg-border md:grid-cols-4">
         {siteConfig.headlineMetrics.map((metric) => (
-          <div key={metric.label} className="bg-background px-6 py-8">
-            <p className="font-heading text-2xl font-semibold text-foreground md:text-3xl">
+          <div key={`${metric.programme}-${metric.label}`} className="bg-background px-6 py-8">
+            <p className="font-mono text-[10px] uppercase tracking-wider text-accent-muted">
+              {metric.programme}
+            </p>
+            <p className="mt-2 font-heading text-2xl font-semibold text-foreground md:text-3xl">
               {metric.value}
             </p>
             <p className="mt-2 font-mono text-xs uppercase tracking-wider text-muted">

@@ -22,142 +22,180 @@ export type ExpertiseDomain = {
 
 export const siteConfig = {
   name: "Rosen [Your Surname]",
-  title: "E-commerce Manager",
+  title: "E-Commerce & Marketplace Manager",
   location: "United Kingdom",
   email: "hello@example.com",
   linkedin: "https://www.linkedin.com/in/your-profile",
   resumePath: "/resume.html",
-  tagline: "Scaling multi-channel commerce through data, systems, and execution.",
+  tagline: "I build the commerce systems teams depend on — storefronts, listing infrastructure, and internal ops tooling.",
   elevatorPitch:
-    "I lead e-commerce growth across Amazon, TikTok Shop, eBay, Shopify, WooCommerce, and Temu — owning revenue outcomes from strategy through operational delivery.",
+    "At RebX I own in-house Shopify, bulk listing, returns ops, and marketplace integrations. At Gymstack I run a 300+ brand supplement marketplace. Recruiters should read each programme separately — the work is different; the through-line is systems ownership.",
   aboutSummary:
-    "E-commerce operator building multi-channel revenue systems across marketplaces and DTC — from listing architecture to internal ops tooling.",
+    "E-commerce operator who builds and runs in-house commerce infrastructure — custom Shopify, bulk listing, returns workflows, and marketplace tooling — plus marketplace management at scale.",
   aboutLead:
-    "I own commerce end-to-end: channel strategy, storefront execution, analytics, and the operational systems that keep high-volume programmes running.",
+    "I'm an operator who builds what the business runs on: listing infrastructure, custom storefronts, returns boards, and channel integrations — not just campaigns and catalogue tweaks.",
   aboutNarrative: [
-    "The last several years have been spent scaling verified programmes — REBX across Shopify, eBay, Back Market, and Temu; Gymstack as a 300+ brand Shopify marketplace — while building the reporting and workflow infrastructure leadership teams actually use.",
-    "I treat commerce as a systems problem. Acquisition, conversion, retention, and operations have to move together. That means channel-native merchandising, margin-aware pricing tiers, and internal tooling when manual workflows break at volume — like eBay returns bridging warehouse processing and customer service.",
+    "At RebX, current scale depends on systems I built in-house — bulk listing the listing team runs on, a custom dual-shop Shopify store (Refurbished + Bargains), trade-in platform, Daily Returns Board with SLA enforcement, and a growing set of WMS and channel tools. Temu refurbished runs at roughly £4K/month after I configured 4Seller integration and bulk-listed stock listing staff wouldn't take on.",
+    "Gymstack is a separate programme: a curated Shopify marketplace with 300+ supplement brands, category merchandising, and a content hub — marketplace growth, not internal tooling.",
+    "I treat each employer as its own operating environment. Metrics on this site are labelled by programme so nothing from RebX is blended with Gymstack.",
   ],
   aboutPrinciples: [
     {
-      title: "Systems over silos",
+      title: "Build what teams run on",
       description:
-        "One operating model across channels — shared trust standards, pricing rules, and dashboards so teams work from the same evidence.",
+        "If listing, returns, or trade-in breaks at volume, I build internal tooling — bulk listing, SLA boards, API scanners — rather than hiring around the bottleneck.",
     },
     {
-      title: "Evidence before opinion",
+      title: "In-house over agency",
       description:
-        "GA4, Seller Central, and custom ops data drive decisions. Dashboards exist so stakeholders see the same numbers, not slide decks.",
+        "RebX Shopify, trade-in, and most ops tools were conceived and delivered without external dev — Liquid, integrations, and ongoing technical ownership included.",
     },
     {
       title: "Channel-native execution",
       description:
-        "Each platform gets its own merchandising, compliance, and conversion logic — not a Shopify catalogue pasted onto eBay.",
+        "BaseLinker for Amazon Renew grade accuracy, 4Seller for Temu refurbished, eBay API for returns — each channel gets the integration it needs, not a pasted catalogue.",
     },
     {
-      title: "Ops that scale with volume",
+      title: "Honest scope",
       description:
-        "When returns, listings, or CS cases outgrow spreadsheets, I champion internal tooling — API sync, OCR intake, unified case views.",
+        "I credit what's mine, what's shared, and what's in progress — TikTok Shop hit £3.5K/month organically before the channel was lost; Temu day-to-day ops involve the wider team.",
     },
   ] satisfies AboutPrinciple[],
   aboutIntent: {
-    headline: "Senior e-commerce leadership with end-to-end ownership.",
+    headline: "Senior e-commerce or marketplace ops with systems ownership.",
     description:
-      "Looking for a role where I can own channel P&L, build durable growth systems, and lead cross-functional execution — not just optimise individual listings.",
+      "Looking for a role where I can own storefronts, marketplace channels, and the internal tooling that makes high-volume ops viable.",
     seeking: [
-      "Multi-channel or marketplace-heavy businesses",
-      "Operator roles with systems and analytics scope",
-      "Teams scaling DTC + marketplace together",
+      "Businesses where ops tooling is as important as revenue",
+      "Shopify + marketplace hybrid environments",
+      "Teams that need an operator who can ship in-house systems",
     ],
   },
   headlineMetrics: [
-    { label: "eBay sold", value: "190K+" },
-    { label: "Brands", value: "300+" },
-    { label: "Channels", value: "6+" },
-    { label: "Feedback", value: "99.6%" },
+    { label: "Internal systems", value: "12+", programme: "REBX" },
+    { label: "Shopify ownership", value: "Sole build", programme: "REBX" },
+    { label: "Temu run rate", value: "~£4K/mo", programme: "REBX" },
+    { label: "Brand catalogue", value: "300+", programme: "Gymstack" },
   ] satisfies HeadlineMetric[],
   impactStats: [
-    { label: "eBay items sold", value: "190K+", detail: "REBX · rebxshop" },
-    { label: "Seller feedback", value: "99.6%", detail: "REBX eBay store" },
-    { label: "Brand catalogue", value: "300+", detail: "Gymstack marketplace" },
-    { label: "Channels operated", value: "4", detail: "REBX · Shopify, eBay, Back Market, Temu" },
-    { label: "Temu store rating", value: "4.5★", detail: "82 SKUs · local warehouse" },
+    {
+      programme: "REBX",
+      label: "Bulk listing system",
+      value: "Core infra",
+      detail: "Listing team dependency — scale impossible without it",
+    },
+    {
+      programme: "REBX",
+      label: "Custom Shopify",
+      value: "Sole owner",
+      detail: "Dual-shop Refurbished + Bargains · Liquid · StoreFeeder",
+    },
+    {
+      programme: "REBX",
+      label: "Daily Returns Board",
+      value: "Org-wide",
+      detail: "SLA enforcement · label scanner + eBay API in progress",
+    },
+    {
+      programme: "REBX",
+      label: "Temu refurbished",
+      value: "~£4K/mo",
+      detail: "4Seller integration · bulk listing I carried out",
+    },
+    {
+      programme: "REBX",
+      label: "TikTok Shop (launch)",
+      value: "£3.5K/mo",
+      detail: "Month one · organic · no ad spend (channel later lost)",
+    },
+    {
+      programme: "Gymstack",
+      label: "Marketplace catalogue",
+      value: "300+ brands",
+      detail: "Shopify · category merchandising · content hub",
+    },
   ] satisfies ImpactStat[],
   experience: [
     {
       company: "REBX Ltd",
-      role: "E-commerce Manager",
+      role: "E-Commerce & Marketplace Manager",
       period: "2022 — Present",
-      scope: "Shopify · eBay · Back Market · Temu",
+      scope: "Shopify · eBay · Temu · Back Market · internal tooling",
       caseStudySlug: "rebx-shopify-refurbished",
       metrics: [
-        { label: "eBay sold", value: "190K+" },
-        { label: "Channels", value: "4" },
+        { label: "Systems built", value: "12+" },
+        { label: "Temu run rate", value: "~£4K/mo" },
       ],
       highlights: [
-        "Built multi-channel refurbished programme across DTC and marketplaces",
-        "Scaled eBay store to 190K+ items sold at 99.6% positive feedback",
-        "Maintained 4.4★ Back Market seller rating across 88-product catalogue",
-        "Built eBay returns bridge — API dashboard + OCR scanning linking processing and CS",
+        "Built bulk listing system — listing team depends on it; expansion impossible without this infrastructure",
+        "Sole owner of custom Shopify — dual Refurbished + Bargains shops, Liquid theme, StoreFeeder, no agency",
+        "Built Daily Returns Board with SLA enforcement; Returns Label Scanner (eBay API + OCR) in progress",
+        "Custom trade-in platform in-house — GDPR-compliant, encrypted customer data",
+        "Configured 4Seller + bulk listing for Temu refurbished (~£4K/mo); TikTok Shop to £3.5K/mo month one organic",
+        "eBay image converter, Back Market trade-in tracker, Jarvis WMS asset checker — daily listing-team use",
       ],
     },
     {
       company: "Gymstack",
       role: "E-commerce Manager",
       period: "2023 — Present",
-      scope: "Shopify marketplace · 300+ brands",
+      scope: "Shopify marketplace · merchandising · content",
       caseStudySlug: "gymstack-shopify-marketplace",
       metrics: [
         { label: "Brands", value: "300+" },
         { label: "Platform", value: "Shopify" },
       ],
       highlights: [
-        "Launched supplement marketplace with 300+ curated brands",
-        "Built category-led merchandising and evidence-based content hub",
-        "Deployed promotional architecture across flash sales and bundle offers",
+        "Curated supplement marketplace with 300+ brands across sports nutrition and wellness",
+        "Category pill navigation, best-seller modules, and promotional architecture",
+        "Evidence-based blog hub with topic filters for SEO and trust",
       ],
     },
   ] satisfies Experience[],
   expertiseDomains: [
     {
+      domain: "Internal commerce systems",
+      description:
+        "Bulk listing, returns boards, trade-in platforms, WMS tooling, VAT automation — built in-house when ops outgrow spreadsheets",
+    },
+    {
+      domain: "Shopify & DTC",
+      description:
+        "Custom Liquid builds, dual-shop architecture, StoreFeeder, payments, trade-in — sole technical ownership at RebX",
+    },
+    {
       domain: "Marketplace operations",
-      description: "Amazon, eBay, Temu — listing architecture, Buy Box, Renew, compliance",
+      description:
+        "eBay, Temu, Back Market, Amazon Renew — integrations, grade-accurate listing, channel-specific catalogue rules",
     },
     {
       domain: "Social commerce",
-      description: "TikTok Shop launch, creator programmes, LIVE commerce, attribution",
+      description: "TikTok Shop launch from scratch — organic run-rate growth before channel loss",
     },
     {
-      domain: "DTC & conversion",
-      description: "Shopify, WooCommerce — CRO, checkout, PDP optimisation, A/B testing",
-    },
-    {
-      domain: "Analytics & reporting",
-      description: "GA4, GTM, Looker Studio — funnel measurement, stakeholder dashboards",
-    },
-    {
-      domain: "Operations & systems",
-      description: "eBay API integrations, OCR returns intake, cross-team workflow dashboards",
+      domain: "Marketplace merchandising",
+      description: "Gymstack — 300+ brand catalogue, category discovery, campaigns, content-led acquisition",
     },
   ] satisfies ExpertiseDomain[],
   channelExpertise: [
-    { channel: "amazon", proofPoint: "Marketplace ops · listing architecture · Renew" },
-    { channel: "tiktok", proofPoint: "Social commerce · shop launch · creator programmes" },
-    { channel: "ebay", proofPoint: "190K+ sold · eBay API returns · OCR ops dashboard" },
-    { channel: "shopify", proofPoint: "Gymstack · REBX · 300+ brands & certified refurb" },
-    { channel: "woocommerce", proofPoint: "DTC rebuild · CRO · checkout optimisation" },
-    { channel: "temu", proofPoint: "REBX mall · 82 SKUs · 4.5★ · local warehouse" },
+    { channel: "shopify", proofPoint: "RebX sole custom build · Gymstack 300+ brand marketplace" },
+    { channel: "ebay", proofPoint: "Bulk listing · image converter · returns API tooling" },
+    { channel: "temu", proofPoint: "4Seller refurb integration · ~£4K/mo after bulk listing" },
+    { channel: "backmarket", proofPoint: "Trade-in tracker · seller catalogue management" },
+    { channel: "tiktok", proofPoint: "Shop setup · £3.5K/mo month one organic" },
+    { channel: "amazon-renew", proofPoint: "BaseLinker grade-accurate Renew listing" },
   ] satisfies ChannelExpertise[],
   tools: [
+    "Shopify",
+    "Liquid",
+    "StoreFeeder",
+    "BaseLinker",
+    "4Seller",
+    "eBay Post-Order API",
     "Google Analytics 4",
     "Google Tag Manager",
-    "Amazon Seller Central",
-    "Helium 10",
-    "Shopify",
-    "WooCommerce",
-    "Looker Studio",
-    "Hotjar",
     "Klaviyo",
+    "Looker Studio",
   ],
   testimonials: [
     {

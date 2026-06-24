@@ -52,8 +52,11 @@ export function AboutHero() {
 
         <div className="grid grid-cols-2 gap-px border border-border bg-border">
           {siteConfig.headlineMetrics.map((metric) => (
-            <div key={metric.label} className="bg-background p-5">
-              <p className="font-heading text-xl font-semibold text-foreground md:text-2xl">
+            <div key={`${metric.programme}-${metric.label}`} className="bg-background p-5">
+              <p className="font-mono text-[10px] uppercase tracking-wider text-accent-muted">
+                {metric.programme}
+              </p>
+              <p className="mt-2 font-heading text-xl font-semibold text-foreground md:text-2xl">
                 {metric.value}
               </p>
               <p className="mt-2 font-mono text-[10px] uppercase tracking-wider text-muted">

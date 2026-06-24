@@ -97,12 +97,14 @@ export type ChannelExpertise = {
 export type HeadlineMetric = {
   label: string;
   value: string;
+  programme?: string;
 };
 
 export type ImpactStat = {
   label: string;
   value: string;
   detail?: string;
+  programme?: string;
 };
 
 export type PlatformShowcase = {
