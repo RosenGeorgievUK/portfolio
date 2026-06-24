@@ -26,20 +26,6 @@ export function AboutExperience() {
                 </p>
                 <p className="mt-1 text-sm text-prose">{role.company}</p>
                 <p className="mt-3 font-mono text-xs text-accent-muted">{role.scope}</p>
-                {role.metrics && role.metrics.length > 0 ? (
-                  <div className="mt-6 space-y-3 border-t border-border pt-6">
-                    {role.metrics.map((metric) => (
-                      <div key={metric.label}>
-                        <p className="font-heading text-lg font-semibold text-foreground">
-                          {metric.value}
-                        </p>
-                        <p className="font-mono text-[10px] uppercase tracking-wider text-muted">
-                          {metric.label}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
-                ) : null}
               </div>
 
               <div>

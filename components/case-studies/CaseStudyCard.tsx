@@ -26,18 +26,12 @@ export function CaseStudyCard({ study }: CaseStudyCardProps) {
             <ChannelBadge key={channel} channel={channel} size="sm" />
           ))}
         </div>
-        <p className="flex-1 text-sm leading-relaxed text-muted">
-          {study.summary}
+        <p className="flex-1 text-sm leading-relaxed text-prose">
+          {study.cardSummary ?? study.summary}
         </p>
-        <div className="mt-6 grid grid-cols-3 gap-4 border-t border-border pt-6">
-          {study.headlineMetrics.map((metric) => (
-            <div key={metric.label}>
-              <p className="font-heading text-base font-bold text-foreground">
-                {metric.value}
-              </p>
-              <p className="mt-1 text-xs text-muted">{metric.label}</p>
-            </div>
-          ))}
+        <div className="mt-6 border-t border-border pt-6">
+          <p className="font-mono text-xs text-muted">{study.role}</p>
+          <p className="mt-1 font-mono text-xs text-accent-muted">{study.timeline}</p>
         </div>
         <span className="mt-6 inline-flex items-center gap-1 text-xs font-medium uppercase tracking-[0.1em] text-foreground">
           Case study

@@ -118,19 +118,6 @@ function CaseStudyHeader({ study }: { study: CaseStudy }) {
           <ArrowUpRight className="h-3.5 w-3.5" />
         </a>
       ) : null}
-
-      <div className="mt-16 grid grid-cols-3 gap-px border border-border bg-border">
-        {study.headlineMetrics.map((metric) => (
-          <div key={metric.label} className="bg-background p-6">
-            <p className="font-heading text-2xl font-semibold text-foreground">
-              {metric.value}
-            </p>
-            <p className="mt-2 font-mono text-xs uppercase tracking-wider text-muted">
-              {metric.label}
-            </p>
-          </div>
-        ))}
-      </div>
     </>
   );
 }

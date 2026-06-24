@@ -1,4 +1,4 @@
-import type { ChannelExpertise, HeadlineMetric, ImpactStat } from "./types";
+import type { ChannelExpertise } from "./types";
 
 export type Experience = {
   company: string;
@@ -15,6 +15,14 @@ export type AboutPrinciple = {
   description: string;
 };
 
+export type CurrentProgramme = {
+  company: string;
+  role: string;
+  period: string;
+  scope: string;
+  caseStudySlug: string;
+};
+
 export type ExpertiseDomain = {
   domain: string;
   description: string;
@@ -29,7 +37,7 @@ export const siteConfig = {
   resumePath: "/resume.html",
   tagline: "I build the commerce systems teams depend on — storefronts, listing infrastructure, and internal ops tooling.",
   elevatorPitch:
-    "At RebX I own in-house Shopify, bulk listing, returns ops, and marketplace integrations. At Gymstack I run a 300+ brand supplement marketplace. Recruiters should read each programme separately — the work is different; the through-line is systems ownership.",
+    "At RebX I build and run in-house infrastructure — Shopify, bulk listing, returns ops, marketplace integrations. At Gymstack I manage a curated supplement marketplace. Proof is in each case study.",
   aboutSummary:
     "E-commerce operator who builds and runs in-house commerce infrastructure — custom Shopify, bulk listing, returns workflows, and marketplace tooling — plus marketplace management at scale.",
   aboutLead:
@@ -37,7 +45,7 @@ export const siteConfig = {
   aboutNarrative: [
     "At RebX, current scale depends on systems I built in-house — bulk listing the listing team runs on, a custom dual-shop Shopify store (Refurbished + Bargains), trade-in platform, Daily Returns Board with SLA enforcement, and a growing set of WMS and channel tools. Temu refurbished runs at roughly £4K/month after I configured 4Seller integration and bulk-listed stock listing staff wouldn't take on.",
     "Gymstack is a separate programme: a curated Shopify marketplace with 300+ supplement brands, category merchandising, and a content hub — marketplace growth, not internal tooling.",
-    "I treat each employer as its own operating environment. Metrics on this site are labelled by programme so nothing from RebX is blended with Gymstack.",
+    "I treat each employer as its own operating environment. Proof lives in the case studies — not blended headline numbers on the homepage.",
   ],
   aboutPrinciples: [
     {
@@ -71,50 +79,24 @@ export const siteConfig = {
       "Teams that need an operator who can ship in-house systems",
     ],
   },
-  headlineMetrics: [
-    { label: "Internal systems", value: "12+", programme: "REBX" },
-    { label: "Shopify ownership", value: "Sole build", programme: "REBX" },
-    { label: "Temu run rate", value: "~£4K/mo", programme: "REBX" },
-    { label: "Brand catalogue", value: "300+", programme: "Gymstack" },
-  ] satisfies HeadlineMetric[],
-  impactStats: [
+  currentProgrammes: [
     {
-      programme: "REBX",
-      label: "Bulk listing system",
-      value: "Core infra",
-      detail: "Listing team dependency — scale impossible without it",
+      company: "REBX Ltd",
+      role: "E-Commerce & Marketplace Manager",
+      period: "2022 — Present",
+      scope:
+        "In-house systems — bulk listing, sole-built Shopify, trade-in, Daily Returns Board — plus eBay, Temu, Back Market, DTC.",
+      caseStudySlug: "rebx-shopify-refurbished",
     },
     {
-      programme: "REBX",
-      label: "Custom Shopify",
-      value: "Sole owner",
-      detail: "Dual-shop Refurbished + Bargains · Liquid · StoreFeeder",
+      company: "Gymstack",
+      role: "E-commerce Manager",
+      period: "2023 — Present",
+      scope:
+        "Curated Shopify marketplace — category merchandising, promotions, and evidence-based content.",
+      caseStudySlug: "gymstack-shopify-marketplace",
     },
-    {
-      programme: "REBX",
-      label: "Daily Returns Board",
-      value: "Org-wide",
-      detail: "SLA enforcement · label scanner + eBay API in progress",
-    },
-    {
-      programme: "REBX",
-      label: "Temu refurbished",
-      value: "~£4K/mo",
-      detail: "4Seller integration · bulk listing I carried out",
-    },
-    {
-      programme: "REBX",
-      label: "TikTok Shop (launch)",
-      value: "£3.5K/mo",
-      detail: "Month one · organic · no ad spend (channel later lost)",
-    },
-    {
-      programme: "Gymstack",
-      label: "Marketplace catalogue",
-      value: "300+ brands",
-      detail: "Shopify · category merchandising · content hub",
-    },
-  ] satisfies ImpactStat[],
+  ] satisfies CurrentProgramme[],
   experience: [
     {
       company: "REBX Ltd",
@@ -122,10 +104,6 @@ export const siteConfig = {
       period: "2022 — Present",
       scope: "Shopify · eBay · Temu · Back Market · internal tooling",
       caseStudySlug: "rebx-shopify-refurbished",
-      metrics: [
-        { label: "Systems built", value: "12+" },
-        { label: "Temu run rate", value: "~£4K/mo" },
-      ],
       highlights: [
         "Built bulk listing system — listing team depends on it; expansion impossible without this infrastructure",
         "Sole owner of custom Shopify — dual Refurbished + Bargains shops, Liquid theme, StoreFeeder, no agency",
@@ -141,10 +119,6 @@ export const siteConfig = {
       period: "2023 — Present",
       scope: "Shopify marketplace · merchandising · content",
       caseStudySlug: "gymstack-shopify-marketplace",
-      metrics: [
-        { label: "Brands", value: "300+" },
-        { label: "Platform", value: "Shopify" },
-      ],
       highlights: [
         "Curated supplement marketplace with 300+ brands across sports nutrition and wellness",
         "Category pill navigation, best-seller modules, and promotional architecture",

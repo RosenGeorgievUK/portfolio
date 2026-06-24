@@ -5,7 +5,7 @@ import { siteConfig } from "@/lib/site";
 
 export function ExecutiveHero() {
   return (
-    <section className="mx-auto max-w-5xl px-6 pb-24 pt-32">
+    <section className="mx-auto max-w-5xl px-6 pb-16 pt-32">
       <SectionLabel>
         {siteConfig.title} · {siteConfig.location}
       </SectionLabel>
@@ -15,37 +15,16 @@ export function ExecutiveHero() {
       <p className="prose prose-lg mt-8 max-w-2xl text-prose md:text-xl">
         {siteConfig.tagline}
       </p>
-      <p className="prose mt-4 max-w-2xl text-prose">
-        {siteConfig.elevatorPitch}
-      </p>
-
-      <div className="mt-16 grid grid-cols-2 gap-px border border-border bg-border md:grid-cols-4">
-        {siteConfig.headlineMetrics.map((metric) => (
-          <div key={`${metric.programme}-${metric.label}`} className="bg-background px-6 py-8">
-            <p className="font-mono text-[10px] uppercase tracking-wider text-accent-muted">
-              {metric.programme}
-            </p>
-            <p className="mt-2 font-heading text-2xl font-semibold text-foreground md:text-3xl">
-              {metric.value}
-            </p>
-            <p className="mt-2 font-mono text-xs uppercase tracking-wider text-muted">
-              {metric.label}
-            </p>
-          </div>
-        ))}
-      </div>
+      <p className="prose mt-4 max-w-2xl text-prose">{siteConfig.elevatorPitch}</p>
 
       <div className="mt-12 flex gap-6">
         <Link
           href="/work"
           className="text-sm text-foreground underline underline-offset-4 hover:text-muted"
         >
-          View selected work
+          View case studies
         </Link>
-        <Link
-          href="/contact"
-          className="text-sm text-muted hover:text-foreground"
-        >
+        <Link href="/contact" className="text-sm text-muted hover:text-foreground">
           Get in touch
         </Link>
       </div>

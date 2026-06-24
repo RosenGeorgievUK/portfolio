@@ -55,15 +55,9 @@ export function AboutProgrammes() {
                   ))}
                 </div>
               </div>
-              <div className="flex gap-8 md:justify-end">
-                {study.headlineMetrics.slice(0, 2).map((metric) => (
-                  <div key={metric.label} className="text-right">
-                    <p className="font-heading text-lg font-semibold text-foreground">
-                      {metric.value}
-                    </p>
-                    <p className="mt-1 font-mono text-xs text-muted">{metric.label}</p>
-                  </div>
-                ))}
+              <div className="hidden shrink-0 flex-col items-end gap-1 md:flex">
+                <p className="font-mono text-xs text-muted">{study.role}</p>
+                <p className="font-mono text-xs text-accent-muted">{study.timeline}</p>
               </div>
             </Link>
           ))}

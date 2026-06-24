@@ -16,9 +16,9 @@ export function SelectedWork() {
       <div className="mx-auto max-w-5xl px-6">
         <div className="mb-16 flex items-end justify-between">
           <div>
-            <SectionLabel>Selected work</SectionLabel>
+            <SectionLabel>Case studies</SectionLabel>
             <h2 className="mt-3 font-heading text-3xl font-semibold tracking-tight text-foreground">
-              Verified programmes
+              Two programmes, fully documented
             </h2>
           </div>
           <Link
@@ -60,17 +60,9 @@ export function SelectedWork() {
                   className="hidden h-24 w-40 md:flex"
                 />
               </div>
-              <div className="flex shrink-0 gap-8 pl-12 md:pl-0">
-                {study.headlineMetrics.map((metric) => (
-                  <div key={metric.label} className="text-right">
-                    <p className="font-heading text-lg font-semibold text-foreground">
-                      {metric.value}
-                    </p>
-                    <p className="mt-1 font-mono text-xs text-muted">
-                      {metric.label}
-                    </p>
-                  </div>
-                ))}
+              <div className="hidden shrink-0 flex-col items-end gap-1 md:flex">
+                <p className="font-mono text-xs text-muted">{study.role}</p>
+                <p className="font-mono text-xs text-accent-muted">{study.timeline}</p>
               </div>
             </Link>
           ))}
